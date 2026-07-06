@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo.svg';
+import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,6 +40,7 @@ export default function Navbar() {
         </nav>
 
         <div className="navbar-cta">
+          <ThemeToggle />
           <a href="#contact" className="btn btn-primary btn-navbar">
             Demo Talep Et
           </a>
@@ -57,6 +59,7 @@ export default function Navbar() {
           <a href="#features" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>Özellikler</a>
           <a href="#simulator" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>ERP Simülatörü</a>
           <a href="#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>İletişim</a>
+          <ThemeToggle className="theme-toggle--mobile" />
           <a href="#contact" className="btn btn-primary w-full text-center mt-4" onClick={() => setIsMobileMenuOpen(false)}>
             Demo Talep Et
           </a>

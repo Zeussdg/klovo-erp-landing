@@ -6,6 +6,7 @@ import Features from './components/Features';
 import ErpSimulator from './components/ErpSimulator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ThemeToggle from './components/ThemeToggle';
 
 function App() {
   const [isStandalone, setIsStandalone] = useState(false);
@@ -34,22 +35,17 @@ function App() {
         backgroundColor: 'var(--bg-primary)',
         overflow: 'hidden'
       }}>
-        <div className="standalone-header" style={{
-          display: 'flex',
-          JustifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '1rem 2rem',
-          borderBottom: '1px solid var(--border-color)',
-          background: 'rgba(11, 15, 25, 0.8)',
-          backdropFilter: 'blur(10px)'
-        }}>
-          <div className="standalone-brand" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div className="standalone-header">
+          <div className="standalone-brand">
             <span className="logo-text">KLOVO<span className="logo-subtext">ERP</span></span>
-            <span className="badge" style={{ margin: 0, padding: '0.15rem 0.5rem', fontSize: '0.75rem' }}>BAĞIMSIZ DEMO</span>
+            <span className="badge standalone-badge">BAĞIMSIZ DEMO</span>
           </div>
-          <button className="btn btn-secondary" onClick={handleExitStandalone} style={{ padding: '0.5rem 1rem', fontSize: '0.85rem' }}>
-            Ana Sayfaya Dön
-          </button>
+          <div className="standalone-actions">
+            <ThemeToggle />
+            <button className="btn btn-secondary" onClick={handleExitStandalone}>
+              Ana Sayfaya Dön
+            </button>
+          </div>
         </div>
         <div className="standalone-content" style={{ flexGrow: 1, padding: '1rem', overflow: 'hidden' }}>
           <ErpSimulator isStandaloneMode={true} />
