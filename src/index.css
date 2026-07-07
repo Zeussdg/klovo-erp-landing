@@ -365,7 +365,7 @@ a {
   color: var(--text-primary);
 }
 .logo-subtext {
-  color: var(--accent-blue);
+  color:orange;
   font-weight: 500;
 }
 .navbar-desktop {

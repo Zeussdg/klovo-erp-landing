@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logop325.png';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navbar() {
