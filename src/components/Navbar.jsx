@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logop325.png';
 import ThemeToggle from './ThemeToggle';
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,6 +45,13 @@ export default function Navbar() {
           <a href="#contact" className="btn btn-primary btn-navbar">
             Demo Talep Et
           </a>
+        </div>
+
+        <div className="navbar-demo">
+          <Link to="/demo-talep" className="btn btn-primary btn-navbar">
+            Hemen Deneyelim🚀
+          </Link>
+          
         </div>
 
         {/* Mobile Menu Button */}
