@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DemoForm from './pages/DemoForm'; // veya ./pages/DemoForm
+import DepotStockPage from "./pages/products/DepotStockPage";
 
 function Home() {
   const [isStandalone, setIsStandalone] = useState(false);
@@ -66,6 +67,8 @@ function Home() {
       <Footer />
     </>
   );
+
+
 }
 
 function App() {
@@ -74,6 +77,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/demo-talep" element={<DemoForm />} />
+        <Route path="/products/depo-stok" element={<DepotStockPage />}
+/>
       </Routes>
     </BrowserRouter>
   );

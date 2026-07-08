@@ -1,5 +1,5 @@
 import React from 'react';
-import './DemoForm.css';
+import '../style/DemoForm.css';
 import logo from '../assets/logo_yeni_1.png';
 
 function DemoForm() {

@@ -54,7 +54,7 @@ export default function Navbar() {
 
     <div className="mega-menu">
 
-      <Link to="/erp" className="mega-item">
+      <Link to="/" className="mega-item">
       <div className="mega-icon">
         <Boxes size={20} />
         </div>
@@ -66,7 +66,7 @@ export default function Navbar() {
 
   
 
-      <Link to="/crm" className="mega-item">
+      <Link to="/products/depo-stok" className="mega-item">
       <div className="mega-icon">
         <Users size={20} />
         </div>
