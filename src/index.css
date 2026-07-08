@@ -345,7 +345,7 @@ a {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
   padding: 1.25rem 0;
   transition: all 0.3s ease;
   background: transparent;
@@ -366,10 +366,14 @@ a {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  
 }
 .logo-img {
-  height: 36px;
+position: relative;
+ left: -100px;
+  height: 30px;
   width: auto;
+  transform:none;
 }
 .logo-text {
   font-family: 'Outfit', sans-serif;
@@ -403,7 +407,7 @@ a {
   color: var(--text-secondary);
 }
 .nav-link:hover {
-  color: var(--accent-blue);
+  color: rgb(102, 99, 95);
 }
 .navbar-mobile-toggle {
   display: none;
@@ -444,6 +448,181 @@ a {
   border-bottom: 1px solid var(--border-color);
   padding-bottom: 0.5rem;
 }
+/* ===========================
+   ÜRÜNLER MEGA MENU
+=========================== */
+
+.nav-dropdown {
+  border: none;
+  
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* Hover boşluğu */
+.nav-dropdown::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+}
+.dropdown-trigger {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  padding: 0;
+  margin: 0;
+
+  font: inherit;
+  color: var(--text-secondary);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-trigger:focus,
+.dropdown-trigger:focus-visible,
+.dropdown-trigger:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Açılır Menü */
+.mega-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+
+  width: 720px;          /* 720 yerine daha kompakt */
+  padding: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+  background: #fff;      /* Light tema için */
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,.12);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: .25s ease;
+  z-index: 999;
+}
+
+/* Hover olunca aç */
+
+.nav-dropdown:hover .mega-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateX(-50%) translateY(0);
+}
+
+/* Ürün Kartı */
+
+.mega-item{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:12px 14px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    transition:.25s;
+}
+
+.mega-item:hover{
+
+    background:rgba(247,148,28,.08);
+
+}
+
+/* İkon */
+
+.mega-icon{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(247,148,28,.12);
+
+    color:#f7941c;
+
+    flex-shrink:0;
+
+    transition:.25s;
+}
+
+.mega-item:hover .mega-icon{
+
+    background:#f7941c;
+    color:white;
+
+    transform:scale(1.08);
+
+}
+
+/* Yazılar */
+
+.mega-item h4{
+
+    margin:0;
+    color:var(--text-primary);
+
+    font-size:16px;
+
+    font-weight:600;
+}
+
+.mega-item p{
+
+    margin-top:4px;
+
+    color:var(--text-secondary);
+
+    font-size:13px;
+
+    line-height:1.4;
+}
+
+/* Mobilde gizle */
+
+@media(max-width:768px){
+
+    .mega-menu{
+        display:none;
+    }
+
+}
+
+
 
 /* Hero Section */
 .hero-section {

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logop325.png';
+import logo from '../assets/logo_yeni_1.png';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,6 +20,7 @@ export default function Footer() {
               <h4>Bağlantılar</h4>
               <a href="#home">Ana Sayfa</a>
               <a href="#about">Hakkımızda</a>
+              <a href="#products">Ürünler</a>
               <a href="#features">Özellikler</a>
               <a href="#simulator">ERP Simülatörü</a>
             </div>

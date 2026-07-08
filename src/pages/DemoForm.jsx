@@ -1,6 +1,6 @@
 import React from 'react';
 import './DemoForm.css';
-import logo from '../assets/logop325.png';
+import logo from '../assets/logo_yeni_1.png';
 
 function DemoForm() {
   return (

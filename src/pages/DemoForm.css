@@ -58,7 +58,7 @@
 }
 
 .demo-form-card {
-  background:rgba(205, 144, 59, 0.919);
+  background:rgb(245, 188, 109);
   border: 1px solid var(--border-color);
   border-radius: 28px;
   padding: 2.5rem;
@@ -94,7 +94,7 @@
 
 .demo-form input::placeholder,
 .demo-form textarea::placeholder {
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .demo-form input:focus,
