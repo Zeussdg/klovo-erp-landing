@@ -75,7 +75,7 @@ export default function Navbar() {
           <p>Stok durumunu ve hareketlerini takip edin.Ürün bazlı detaylı kritik takip.</p>
         </div>
       </Link>
-      <Link to="/crm" className="mega-item">
+      <Link to="/products/api" className="mega-item">
       <div className="mega-icon">
         <Users size={20} />
         </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <Link to="/crm" className="mega-item">
+      <Link to="/products/cloud-altyapi" className="mega-item">
       <div className="mega-icon">
         <Users size={20} />
         </div>
@@ -95,7 +95,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <Link to="/crm" className="mega-item">
+      <Link  to="/products/e-donusum" className="mega-item">
       <div className="mega-icon">
         <Users size={20} />
         </div>
@@ -105,7 +105,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <Link to="/crm" className="mega-item">
+      <Link to="/products/finans-yonetimi" className="mega-item">
       <div className="mega-icon">
         <Users size={20} />
         </div>
@@ -115,7 +115,7 @@ export default function Navbar() {
         </div>
       </Link>
 
-      <Link to="/crm" className="mega-item">
+      <Link to="/products/restoran-cafe" className="mega-item">
       <div className="mega-icon">
         <Users size={20} />
         </div>

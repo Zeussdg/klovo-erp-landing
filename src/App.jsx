@@ -10,6 +10,11 @@ import ThemeToggle from './components/ThemeToggle';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DemoForm from './pages/DemoForm'; // veya ./pages/DemoForm
 import DepotStockPage from "./pages/products/DepotStockPage";
+import ApiIntegrationPage from "./pages/products/ApiIntegrationPage";
+import CloudPage from "./pages/products/CloudPage";
+import EDonusumPage from "./pages/products/EDonusumPage";
+import FinancePage from "./pages/products/FinancePage";
+import RestaurantCafePage from "./pages/products/RestaurantCafePage";
 
 function Home() {
   const [isStandalone, setIsStandalone] = useState(false);
@@ -77,8 +82,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/demo-talep" element={<DemoForm />} />
-        <Route path="/products/depo-stok" element={<DepotStockPage />}
-/>
+        <Route path="/products/depo-stok" element={<DepotStockPage />}/>
+        <Route path="/products/api" element={<ApiIntegrationPage />}/>
+        <Route path="/products/cloud-altyapi" element={<CloudPage />}/>
+        <Route path="/products/e-donusum"element={<EDonusumPage />}/>
+        <Route path="/products/finans-yonetimi" element={<FinancePage />}/>
+        <Route path="/products/restoran-cafe" element={<RestaurantCafePage />}/>
       </Routes>
     </BrowserRouter>
   );
