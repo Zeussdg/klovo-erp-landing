@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from '../assets/logo_yeni_1.png';
+import { HashLink } from "react-router-hash-link";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -8,28 +9,28 @@ export default function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <a href="#" className="footer-logo">
+            <HashLink smooth to="/" className="footer-logo">
               <img src={logo} alt="Klovo ERP Logo" className="logo-img" />
               <span className="logo-text">KLOVO<span className="logo-subtext">ERP</span></span>
-            </a>
+            </HashLink>
             <p>Bulut tabanlı yapısı ile finans, stok, satış, operasyon ve e-fatura süreçlerinizi tek platformdan yönetin.</p>
           </div>
           
           <div className="footer-links-grid">
             <div className="footer-links-col">
               <h4>Bağlantılar</h4>
-              <a href="#home">Ana Sayfa</a>
-              <a href="#about">Hakkımızda</a>
-              <a href="#products">Ürünler</a>
-              <a href="#features">Özellikler</a>
-              <a href="#simulator">ERP Simülatörü</a>
+              <HashLink smooth to="/#home">Ana Sayfa</HashLink>
+              <HashLink smooth to="/#about">Hakkımızda</HashLink>
+              <HashLink smooth to="/#products">Ürünler</HashLink>
+              <HashLink smooth to="/#features">Özellikler</HashLink>
+              <HashLink smooth to="/#simulator">ERP Simülatörü</HashLink>
             </div>
             
             <div className="footer-links-col">
               <h4>İletişim</h4>
-              <a href="tel:08503463201">0850 346 32 01</a>
-              <a href="mailto:info@klovo.com">info@klovo.com</a>
-              <a href="#contact">Destek Al</a>
+              <HashLink to="tel:08503463201">0850 346 32 01</HashLink>
+              <HashLink to="mailto:info@klovo.com">info@klovo.com</HashLink>
+              <HashLink smooth to="/#contact">Destek Al</HashLink>
             </div>
           </div>
         </div>
@@ -37,7 +38,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <p>© {currentYear} Klovo ERP - Tüm Hakları Saklıdır.</p>
           <div className="footer-bottom-links">
-            <a href="#" onClick={(e) => { e.preventDefault(); alert('Gizlilik Sözleşmesi yakında eklenecektir.'); }}>Gizlilik Sözleşmesi</a>
+            <HashLink to="#" onClick={(e) => { e.preventDefault(); alert('Gizlilik Sözleşmesi yakında eklenecektir.'); }}>Gizlilik Sözleşmesi</HashLink>
           </div>
         </div>
       </div>

@@ -507,11 +507,11 @@ position: relative;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
 
-  width: 720px;          /* 720 yerine daha kompakt */
+  width: 620px;          /* 720 yerine daha kompakt */
   padding: 16px;
 
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
 
   background: #fff;      /* Light tema için */
@@ -596,7 +596,7 @@ position: relative;
     margin:0;
     color:var(--text-primary);
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:600;
 }
@@ -607,7 +607,7 @@ position: relative;
 
     color:var(--text-secondary);
 
-    font-size:13px;
+    font-size:12px;
 
     line-height:1.4;
 }
