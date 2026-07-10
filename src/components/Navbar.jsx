@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/logo_yeni_1.png';
-import ThemeToggle from './ThemeToggle';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import {
@@ -18,6 +17,7 @@ import {
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -176,12 +176,12 @@ export default function Navbar() {
 
 
 
-        <div className="navbar-cta">
-          <ThemeToggle />
+         <div className="navbar-cta">
+        
           <HashLink to="/#contact" className="btn btn-primary btn-navbar">
             Demo Talep Et
           </HashLink>
-        </div>
+        </div> 
 
         <div className="navbar-demo">
           <HashLink to="/demo-talep" className="btn btn-primary btn-navbar">
@@ -205,16 +205,74 @@ export default function Navbar() {
           <HashLink to="/#features" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             Özellikler
           </HashLink>
+          <button
+            className="mobile-nav-link mobile-products-toggle"
+            onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+          >
+            Ürünler {mobileProductsOpen ? "▲" : "▼"}
+          </button>
+
+          {mobileProductsOpen && (
+            <div className="mobile-products-list">
+              <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>Klovo ERP</HashLink>
+
+              <HashLink to="/products/finans-yonetimi" onClick={() => setIsMobileMenuOpen(false)}>
+                Finans Yönetimi
+              </HashLink>
+
+              <HashLink to="/products/e-donusum" onClick={() => setIsMobileMenuOpen(false)}>
+                E-Dönüşüm
+              </HashLink>
+
+              <HashLink to="/products/restoran-cafe" onClick={() => setIsMobileMenuOpen(false)}>
+                Restoran & Cafe
+              </HashLink>
+
+              <HashLink to="/products/akaryakit" onClick={() => setIsMobileMenuOpen(false)}>
+                Akaryakıt Yönetimi
+              </HashLink>
+
+              <HashLink to="/products/perakende" onClick={() => setIsMobileMenuOpen(false)}>
+                Perakende Yönetimi
+              </HashLink>
+
+              <HashLink to="/products/depo-stok" onClick={() => setIsMobileMenuOpen(false)}>
+                Depo & Stok
+              </HashLink>
+
+              <HashLink to="/products/api" onClick={() => setIsMobileMenuOpen(false)}>
+                API Entegrasyonu
+              </HashLink>
+
+              <HashLink to="/products/cloud-altyapi" onClick={() => setIsMobileMenuOpen(false)}>
+                Cloud Altyapı
+              </HashLink>
+
+              <HashLink to="/products/e-tasarim" onClick={() => setIsMobileMenuOpen(false)}>
+                E-Tasarım
+              </HashLink>
+            </div>
+          )}
           <HashLink to="/#simulator" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             ERP Simülatörü
           </HashLink>
           <HashLink to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
             İletişim
           </HashLink>
-          <ThemeToggle className="theme-toggle--mobile" />
+          {/* <ThemeToggle className="theme-toggle--mobile" /> */}
           <HashLink to="/#contact" className="btn btn-primary w-full text-center mt-4" onClick={() => setIsMobileMenuOpen(false)}>
             Demo Talep Et
           </HashLink>
+
+          {mobileProductsOpen && (
+            <div className="mobile-products-list">
+              <HashLink to="/urunler/erp">ERP</HashLink>
+              <HashLink to="/urunler/cloud">Cloud</HashLink>
+              <HashLink to="/urunler/depo">Depo Yönetimi</HashLink>
+              <HashLink to="/urunler/finans">Finans Yönetimi</HashLink>
+              {/* diğer ürünler */}
+            </div>
+          )}
         </nav>
       </div>
     </header>
