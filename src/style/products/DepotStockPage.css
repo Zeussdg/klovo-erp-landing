@@ -306,15 +306,13 @@
 }
 
 .showcase-image{
-    min-height:420px;
-    border-radius:24px;
-    background:var(--bg-secondary);
-    border:1px solid var(--border-color);
 
     display:flex;
     justify-content:center;
     align-items:center;
 }
+
+
 
 .showcase-content h3{
     font-size:2rem;

@@ -10,6 +10,10 @@ import {
     CreditCard
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
+import ImagePreview from "../../style/ImagePreview";
+import Main from "./images/restoranCafe/restoranMain.png";
+import Main1 from "./images/restoranCafe/restoranYonetim.png";
+import Main2 from "./images/restoranCafe/restoranYonetim3.png"
 
 export default function RestaurantCafePage() {
     return (
@@ -179,7 +183,10 @@ export default function RestaurantCafePage() {
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main}
+                                            alt="1"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -234,7 +241,10 @@ export default function RestaurantCafePage() {
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main2}
+                                            alt="2"
+                                        />
                                     </div>
                                 </div>
 
@@ -244,7 +254,10 @@ export default function RestaurantCafePage() {
                                 <div className="feature-showcase">
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main1}
+                                            alt="3"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -285,12 +298,12 @@ export default function RestaurantCafePage() {
                                                 Restoran Performans
                                             </span>
 
-                                           <h2>Operasyonlarınızı Daha Hızlı Yönetin</h2>
+                                            <h2>Operasyonlarınızı Daha Hızlı Yönetin</h2>
 
-<p>
-    Siparişten ödemeye kadar tüm süreçleri tek sistem
-    üzerinden yöneterek işletmenizin verimliliğini artırın.
-</p>
+                                            <p>
+                                                Siparişten ödemeye kadar tüm süreçleri tek sistem
+                                                üzerinden yöneterek işletmenizin verimliliğini artırın.
+                                            </p>
 
                                         </div>
 
@@ -371,7 +384,7 @@ export default function RestaurantCafePage() {
                                         <summary>Adisyon takibi yapılabiliyor mu?</summary>
 
                                         <p>
-                                           Evet. Açık ve kapalı adisyonlarınızı, ödeme durumlarını ve masa hareketlerini detaylı olarak takip edebilirsiniz.
+                                            Evet. Açık ve kapalı adisyonlarınızı, ödeme durumlarını ve masa hareketlerini detaylı olarak takip edebilirsiniz.
                                         </p>
                                     </details>
 

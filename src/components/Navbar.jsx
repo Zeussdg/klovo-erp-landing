@@ -38,9 +38,9 @@ export default function Navbar() {
   return (
     <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
-        <HashLink to="/" className="navbar-logo">
+        <HashLink to="/#home" className="navbar-logo">
           <img src={logo} alt="Klovo ERP Logo" className="logo-img" />
-          <span className="logo-text">KLOVO<span className="logo-subtext">ERP</span></span>
+          {/*<span className="logo-text">KLOVO<span className="logo-subtext">ERP</span></span>*/}
         </HashLink>
 
 
@@ -167,7 +167,7 @@ export default function Navbar() {
 
           </div> {/* nav-dropdown */}
           <HashLink to="/#simulator" className="nav-link">
-            ERP Simülatörü
+            Mobil ERP Simülatörü
           </HashLink>
           <HashLink to="/#contact" className="nav-link">
             İletişim
@@ -176,12 +176,12 @@ export default function Navbar() {
 
 
 
-         <div className="navbar-cta">
+        {/* <div className="navbar-cta">
         
           <HashLink to="/#contact" className="btn btn-primary btn-navbar">
             Demo Talep Et
           </HashLink>
-        </div> 
+        </div> */}
 
         <div className="navbar-demo">
           <HashLink to="/demo-talep" className="btn btn-primary btn-navbar">

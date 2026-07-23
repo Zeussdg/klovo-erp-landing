@@ -19,39 +19,39 @@ export default function FloatingSocials() {
   >
     <div className={`social-list ${open ? "open" : ""}`}>
 
-      <a href="#" className="social-item linkedin">
+      <a href="https://www.linkedin.com/company/klovo-yaz%C4%B1l%C4%B1m/posts/?feedView=all" className="social-item linkedin">
         <span className="social-label">LinkedIn</span>
         <FaLinkedinIn size={22}/>
       </a>
 
-      <a href="#" className="social-item instagram">
+      <a href="https://www.instagram.com/klovoyazilim/" className="social-item instagram">
         <span className="social-label">Instagram</span>
         <FaInstagram size={22}/>
       </a>
 
-      <a href="#" className="social-item support">
-        <span className="social-label">Canlı Destek</span>
-        <MessageCircle size={22}/>
-      </a>
+      
 
-      <a href="#" className="social-item mail">
+      <a href="mailto:info@klovo.com" className="social-item mail">
         <span className="social-label">E-Posta</span>
         <Mail size={22}/>
       </a>
 
-      <a href="#" className="social-item phone">
+      <a href="tel:+908503463201" className="social-item phone">
         <span className="social-label">Telefon</span>
         <Phone size={22}/>
       </a>
 
     </div>
-
+    <a
+      href="https://wa.me/908503463201"
+      target="_blank">
     <button
       className="whatsapp-btn"
       onMouseEnter={() => setOpen(true)}
     >
       <FaWhatsapp size={28}/>
     </button>
+    </a>
 
   </div>
 );

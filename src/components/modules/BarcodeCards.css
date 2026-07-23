@@ -1,0 +1,278 @@
+.barcode-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  background: #f6f7fc;
+  color: #17171e;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.barcode-header {
+  height: 92px;
+  flex: none;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 25px 18px 12px;
+
+  background: #ff6500;
+  color: #fff;
+}
+
+.barcode-header button {
+  width: 34px;
+
+  border: 0;
+  background: transparent;
+  color: #fff;
+
+  font-size: 30px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.barcode-header h1 {
+  flex: 1;
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.barcode-content {
+  flex: 1;
+  overflow: auto;
+
+  padding: 14px 14px 45px;
+
+  scrollbar-width: none;
+}
+
+.barcode-content::-webkit-scrollbar {
+  display: none;
+}
+
+.print-panel {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+
+  padding: 18px;
+
+  border: 1px solid #d8d8df;
+  border-radius: 23px;
+  background: #f8f8fc;
+}
+
+.print-panel h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.print-panel strong {
+  color: #ed670d;
+  font-size: 16px;
+}
+
+.print-panel p {
+  grid-column: 1 / -1;
+
+  margin: 0;
+
+  color: #565760;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.print-button {
+  align-self: start;
+
+  padding: 13px 15px;
+
+  border: 0;
+  border-radius: 16px;
+
+  background: #ff6500;
+  color: #fff;
+
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.print-panel label {
+  grid-column: 1 / -1;
+
+  color: #55565f;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.print-panel select {
+  display: block;
+  width: 100%;
+
+  margin-top: 7px;
+  padding: 14px;
+
+  border: 1px solid #dedfe5;
+  border-radius: 13px;
+
+  background: #fff;
+  color: #666873;
+  font-size: 15px;
+}
+
+.barcode-filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+  margin: 13px 0 18px;
+}
+
+.barcode-filters button {
+  min-height: 67px;
+
+  border: 1px solid #e4e4ea;
+  border-radius: 14px;
+
+  background: #fff;
+  color: #22232b;
+
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.barcode-filters button.active {
+  border-color: #ff6500;
+  box-shadow: 0 0 0 2px #ff650025;
+}
+
+.barcode-filters small {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #777983;
+  font-size: 11px;
+  font-weight: normal;
+}
+
+.barcode-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.barcode-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 17px 18px 13px 27px;
+
+  border-radius: 24px;
+  background: #fafaff;
+  box-shadow: 0 7px 20px #1a1c2712;
+}
+
+.barcode-line {
+  position: absolute;
+  inset: 0 auto 0 0;
+
+  width: 9px;
+  background: #26ca6a;
+}
+
+.barcode-card h2 {
+  margin: 0 0 13px;
+
+  font-size: 21px;
+  letter-spacing: 1px;
+}
+
+.barcode-card div {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 8px 0;
+
+  font-size: 14px;
+}
+
+.barcode-card div span {
+  color: #5e6069;
+}
+
+.barcode-card div strong {
+  font-size: 14px;
+}
+
+.barcode-card p {
+  margin: 13px 0 0;
+  padding-top: 11px;
+
+  border-top: 1px solid #f0802b;
+
+  color: #60616a;
+  font-size: 12px;
+}
+
+.add-barcode {
+  position: absolute;
+  right: 22px;
+  bottom: 24px;
+  z-index: 2;
+
+  width: 65px;
+  height: 65px;
+
+  border: 0;
+  border-radius: 20px;
+
+  background: #ff6500;
+  color: #fff;
+
+  font-size: 38px;
+  cursor: pointer;
+
+  box-shadow: 0 6px 16px #ff650077;
+}
+
+.print-toast {
+  position: absolute;
+  right: 16px;
+  bottom: 17px;
+  left: 16px;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+
+  padding: 13px 16px;
+
+  border-radius: 14px;
+
+  background: #25262c;
+  color: #fff;
+  font-size: 13px;
+}
+
+.print-toast button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+
+  font-size: 20px;
+  cursor: pointer;
+}

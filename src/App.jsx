@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Features from './components/Features';
-import ErpSimulator from './components/ErpSimulator';
+import Hero3D from "./3DMockup/Hero3D";
+
+//import ErpSimulator from './components/ErpSimulator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ThemeToggle from './components/ThemeToggle';
@@ -23,11 +25,12 @@ import FloatingSocials from "./components/FloatingSocials";
 
 
 
-
+const PhoneDemo = lazy(() => import('./components/PhoneDemo'));
+const TabletDemo = lazy(() => import('./components/TabletDemo'));
 
 function Home() {
   const [isStandalone, setIsStandalone] = useState(false);
-
+  const [activeDevice, setActiveDevice] = useState('phone');
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (
@@ -71,10 +74,32 @@ function Home() {
             </p>
           </div>
 
-          <ErpSimulator isStandaloneMode={false} />
+          <div className="demo-device-switcher">
+            <button
+              className={activeDevice === 'phone' ? 'active' : ''}
+              onClick={() => setActiveDevice('phone')}
+            >
+              Telefon
+            </button>
+
+            <button
+              className={activeDevice === 'tablet' ? 'active' : ''}
+              onClick={() => setActiveDevice('tablet')}
+            >
+              Tablet
+            </button>
+          </div>
+
+          <Suspense fallback={<div className="demo-loading">Demo yükleniyor…</div>}>
+            {activeDevice === 'phone' ? (
+              <PhoneDemo isStandaloneMode={false} />
+            ) : (
+              <TabletDemo isStandaloneMode={false} />
+            )}
+          </Suspense>
+          {/* <ErpSimulator isStandaloneMode={false} /> */}
         </div>
       </section>
-
       <AboutUs />
       <Features />
       <Contact />

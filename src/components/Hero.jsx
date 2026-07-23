@@ -1,6 +1,8 @@
 import React from 'react';
 import { Shield, Zap, Cloud, ArrowRight } from 'lucide-react';
 
+import Hero3D from "/src/3DMockup/Hero3D";
+
 export default function Hero() {
   return (
     <section className="hero-section" id="home">
@@ -8,7 +10,7 @@ export default function Hero() {
       <div className="glow-bg glow-purple"></div>
       
       <div className="container hero-container grid-2">
-        <div className="hero-content">
+         <div className="hero-content">
           <div className="badge">
             <Cloud size={14} style={{ marginRight: '0.4rem' }} /> Bulut Tabanlı ERP Çözümü
           </div>
@@ -19,9 +21,7 @@ export default function Hero() {
             Klovo ERP ile finans, stok, satış, operasyon ve e-fatura süreçlerinizi tek bir merkezden takip edin. Hızlı kurulumu, modern arayüzü ve güçlü entegrasyon kabiliyetiyle işinizi geleceğe taşıyın.
           </p>
           <div className="hero-actions">
-            <a href="#simulator" className="btn btn-primary">
-              Canlı Simülasyonu Dene <ArrowRight size={16} />
-            </a>
+            
             <a href="#contact" className="btn btn-secondary">
               İletişime Geç
             </a>
@@ -37,11 +37,13 @@ export default function Hero() {
               <span>SSL ve Güvenli Yedekleme</span>
             </div>
           </div>
-        </div>
+        </div> 
+        
         
         {/* Right side: Modern Animated Tech Graphic (Dashboard Mockup in CSS) */}
         <div className="hero-graphic-container animate-float">
-          <div className="hero-graphic-card glass-card">
+          {/* <div className="hero-graphic-card glass-card">
+
             <div className="graphic-header">
               <div className="graphic-dots">
                 <span className="dot dot-red"></span>
@@ -51,7 +53,7 @@ export default function Hero() {
               <div className="graphic-title-bar">klovo-cloud-panel</div>
             </div>
             <div className="graphic-body">
-              {/* Financial mini graph representation */}
+              {/* Financial mini graph representation 
               <div className="graphic-card-small">
                 <div className="graphic-card-title">Finansal Akış</div>
                 <div className="graphic-chart-bar-flow">
@@ -64,25 +66,27 @@ export default function Hero() {
               
               <div className="graphic-flex-row">
                 {/* User info */}
-                <div className="graphic-card-mini">
+               {/* <div className="graphic-card-mini">
                   <div className="mini-label">Kullanıcılar</div>
                   <div className="mini-val">+42 Aktif</div>
                 </div>
                 {/* Cloud sync */}
-                <div className="graphic-card-mini highlight">
+               {/* <div className="graphic-card-mini highlight">
                   <div className="mini-label">Yedekleme</div>
                   <div className="mini-val">Tamamlandı</div>
                 </div>
               </div>
 
               {/* Console log simulation */}
-              <div className="graphic-console">
+              {/*<div className="graphic-console">
                 <code>$ klovo-erp --sync</code>
                 <code className="text-success">&gt; Veriler şifrelendi ve buluta aktarıldı.</code>
                 <code className="text-success">&gt; API entegrasyonu aktif (200 OK)</code>
               </div>
             </div>
-          </div>
+          </div> */}
+          <Hero3D/>
+
         </div>
       </div>
     </section>

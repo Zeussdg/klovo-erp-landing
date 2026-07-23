@@ -10,6 +10,10 @@ import {
     Cloud
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
+import ImagePreview from "../../style/ImagePreview";
+import EFatura from "./images/edonusum/efatura.png";
+import EArşiv from "./images/edonusum/earşiv.png";
+//import Cari from "./images/finance/cariHareket.png"
 
 export default function EDonusumPage() {
     return (
@@ -180,7 +184,10 @@ export default function EDonusumPage() {
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={EFatura}
+                                            alt="e-Arşiv"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -235,7 +242,10 @@ export default function EDonusumPage() {
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={EArşiv}
+                                            alt="e-arşiv"
+                                        />
                                     </div>
                                 </div>
 
@@ -245,17 +255,25 @@ export default function EDonusumPage() {
                                 <div className="feature-showcase">
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            //src={Cari}
+                                            //alt="finance2"
+                                        />
+                                        <span>E-irsaliye bekleniyor</span>
                                     </div>
 
                                     <div className="showcase-content">
 
-                                        <h3>GİB Uyumlu Belge Süreçleri</h3>
+                                        <h3>E-İrsaliye Yönetim Paneli</h3>
 
                                         <p>
-                                            Tüm e-Dönüşüm işlemlerinizi güncel GİB standartlarına
-                                            uygun şekilde yönetin ve elektronik belge süreçlerinizi
-                                            güvenle tamamlayın.
+                                            E-İrsaliye Yönetim Paneli ile sevkiyat süreçlerinizi dijital ortamda
+                                            hızlı, güvenli ve kolay bir şekilde yönetin. Oluşturulan e-irsaliyeleri
+                                            anlık olarak görüntüleyebilir, durumlarını
+                                            takip edebilir, filtreleme ve detaylı raporlama özellikleri sayesinde
+                                            tüm sevkiyat operasyonlarınızı tek bir ekrandan kontrol edebilirsiniz.
+                                            Kullanıcı dostu arayüzü sayesinde zamandan tasarruf ederken, yasal mevzuata uygun
+                                            ve hatasız belge yönetimi sağlayabilirsiniz.
                                         </p>
 
                                         <ul>

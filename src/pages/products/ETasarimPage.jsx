@@ -10,6 +10,9 @@ import {
     ShieldCheck
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
+import ImagePreview from "../../style/ImagePreview";
+import Main from "./images/eTasarım/barkod.png";
+import Main1 from "./images/eTasarım/qrKod.png";
 
 export default function ETasarimPage() {
     return (
@@ -177,7 +180,10 @@ export default function ETasarimPage() {
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                                             src={Main}
+                                                             alt="2"
+                                                           />
                                     </div>
 
                                     <div className="showcase-content">
@@ -231,43 +237,13 @@ export default function ETasarimPage() {
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                         <ImagePreview
+                                                              src={Main1}
+                                                              alt="2"
+                                                            />
                                     </div>
                                 </div>
 
-
-
-
-                                <div className="feature-showcase">
-                                    {/* 3. görsel */}
-                                    <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
-                                    </div>
-
-                                    <div className="showcase-content">
-
-                                        <h3>İşletmenize Özel Yazılım Geliştirme</h3>
-
-                                        <p>
-                                            İş süreçlerinize uygun web, masaüstü ve mobil yazılım çözümleri
-                                            geliştirerek mevcut sistemlerinizle tam uyumlu dijital altyapılar oluşturuyoruz.
-                                        </p>
-
-                                        <ul>
-
-                                            <li>✔ Kuruma özel yazılım geliştirme</li>
-
-                                            <li>✔ ERP ve API entegrasyonları</li>
-
-                                            <li>✔ Web ve mobil çözümler</li>
-
-                                            <li>✔ Ölçeklenebilir mimari</li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
 
 
 

@@ -10,6 +10,10 @@ import {
     ShieldCheck
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
+import ImagePreview from "../../style/ImagePreview";
+import finance1 from "./images/finance/finance1.png";
+import finance3 from "./images/finance/finance3.png";
+import Cari from "./images/finance/cariHareket.png"
 
 export default function FinancePage() {
     return (
@@ -181,7 +185,10 @@ export default function FinancePage() {
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={finance1}
+                                            alt="finance1"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -237,7 +244,10 @@ export default function FinancePage() {
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                          <ImagePreview
+                                            src={Cari}
+                                            alt="finance2"
+                                        />
                                     </div>
                                 </div>
 
@@ -247,8 +257,12 @@ export default function FinancePage() {
                                 <div className="feature-showcase">
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={finance3}
+                                            alt="finance3"
+                                        />
                                     </div>
+                                    
 
                                     <div className="showcase-content">
 

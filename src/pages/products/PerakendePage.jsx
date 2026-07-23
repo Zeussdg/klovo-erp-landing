@@ -10,6 +10,11 @@ import {
     CreditCard
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
+import ImagePreview from "../../style/ImagePreview";
+import Main from "./images/parakende/parakende2.png";
+import Main1 from "./images/parakende/parakende1.png";
+import Main2 from "./images/parakende/parakende.png"
+
 
 export default function PerakendePage() {
     return (
@@ -198,7 +203,10 @@ export default function PerakendePage() {
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main}
+                                            alt="2"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -254,7 +262,10 @@ export default function PerakendePage() {
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main1}
+                                            alt="2"
+                                        />
                                     </div>
                                 </div>
 
@@ -264,7 +275,10 @@ export default function PerakendePage() {
                                 <div className="feature-showcase">
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
-                                        <span>Müşteri Yönetim Paneli</span>
+                                        <ImagePreview
+                                            src={Main2}
+                                            alt="2"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
