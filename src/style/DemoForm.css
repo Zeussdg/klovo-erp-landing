@@ -40,9 +40,10 @@
 }
 
 .demo-info p {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   line-height: 1.8;
   font-size: 1.05rem;
+  font-style:inherit;
 }
 
 .demo-features {

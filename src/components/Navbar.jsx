@@ -4,14 +4,21 @@ import logo from '../assets/logo_yeni_1.png';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import {
-  Boxes,
-  Users,
-  Calculator,
+   Wallet,
   Package,
-  Warehouse,
-  Smartphone,
-  ChevronDown,
-  Fuel
+  Users,
+  Receipt,
+  Archive,
+  Truck,
+  ShoppingCart,
+  Store,
+  Boxes,
+  UtensilsCrossed,
+  Coffee,
+  PlugZap,
+  Cloud,
+  Fuel,
+  Code2,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -72,7 +79,7 @@ export default function Navbar() {
 
               <HashLink to="/products/finans-yonetimi" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <Wallet size={16} />
                 </div>
                 <div>
                   <h4>Finans Yönetimi</h4>
@@ -82,7 +89,7 @@ export default function Navbar() {
 
               <HashLink to="/products/e-donusum" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <Archive size={16} />
                 </div>
                 <div>
                   <h4>E-Dönüşüm,E-Fatura & E-Arşiv</h4>
@@ -92,7 +99,7 @@ export default function Navbar() {
 
               <HashLink to="/products/restoran-cafe" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <UtensilsCrossed size={16} />
                 </div>
                 <div>
                   <h4>Restoran ve Cafe Yönetimi</h4>
@@ -112,7 +119,7 @@ export default function Navbar() {
 
               <HashLink to="/products/perakende" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <ShoppingCart size={16} />
                 </div>
                 <div>
                   <h4>Parakende Yönetimi</h4>
@@ -122,7 +129,7 @@ export default function Navbar() {
 
               <HashLink to="/products/depo-stok" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <Package size={16} />
                 </div>
                 <div>
                   <h4>Depo Stok Takipi</h4>
@@ -131,7 +138,7 @@ export default function Navbar() {
               </HashLink>
               <HashLink to="/products/api" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <PlugZap size={16} />
                 </div>
                 <div>
                   <h4>API Entegrasyonu</h4>
@@ -141,7 +148,7 @@ export default function Navbar() {
 
               <HashLink to="/products/cloud-altyapi" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <Cloud size={16} />
                 </div>
                 <div>
                   <h4>Cloud Altyazıpı Hizmetleri</h4>
@@ -154,7 +161,7 @@ export default function Navbar() {
 
               <HashLink to="/products/e-tasarim" className="mega-item">
                 <div className="mega-icon">
-                  <Users size={16} />
+                  <Code2 size={16} />
                 </div>
                 <div>
                   <h4>E-Tasarım ve Geliştirme</h4>

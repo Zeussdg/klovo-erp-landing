@@ -22,6 +22,7 @@ import PerakendePage from "./pages/products/PerakendePage";
 import AkaryakitPage from "./pages/products/AkaryakitPage";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingSocials from "./components/FloatingSocials";
+import CTA from "./components/CTA";
 
 
 
@@ -102,6 +103,7 @@ function Home() {
       </section>
       <AboutUs />
       <Features />
+       <CTA />
       <Contact />
       <Footer />
     </>

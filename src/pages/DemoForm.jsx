@@ -1,14 +1,51 @@
-import React from 'react';
 import '../style/DemoForm.css';
 import logo from '../assets/logo_yeni_1.png';
+import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 
 function DemoForm() {
+  const location = useLocation();
+
+  const {
+    modules = [],
+    sector = "",
+    companySize = "",
+    budget = "",
+  } = location.state || {};
+
+  const defaultMessage = `Merhaba,
+
+${modules.join(", ")} Ürünleriniz hakkında detaylı bilgi almak istiyorum.
+
+İşletmem için uygun çözüm hakkında benimle iletişime geçebilir misiniz?
+
+Teşekkürler.`;
+
+  const [message, setMessage] = useState(defaultMessage);
+  const [selectedSector, setSelectedSector] = useState(sector || "");
+
+  const sectors = [
+    "Perakende",
+    "Market",
+    "Restoran",
+    "Cafe",
+    "Akaryakıt İstasyonu",
+    "Üretim",
+    "Toptan Satış",
+    "Dağıtım",
+    "Lojistik",
+    "E-Ticaret",
+    "Hizmet",
+    "Sağlık",
+    "Eğitim",
+  ];
+
   return (
     <div className="demo-page">
 
-       <div className="demo-page-logo">
-            <img src={logo} alt="Klovo ERP Logo" />
-          </div>
+      <Link to="/" className="demo-page-logo">
+        <img src={logo} alt="Klovo ERP Logo" />
+      </Link>
 
       <div className="demo-container">
         <div className="demo-info">
@@ -16,8 +53,11 @@ function DemoForm() {
           <h1>Klovo ERP'yi İşletmeniz İçin Keşfedin</h1>
 
           <p>
-            Kısa bir form doldurun, ekibimiz sizinle iletişime geçerek
-            işletmenize özel bir demo planlasın.
+            İşletmenizin dijital dönüşüm yolculuğuna ilk adımı bugün atın. Kısa başvuru formunu doldurduktan 
+            sonra Klovo ERP uzmanlarımız sizinle iletişime geçerek ihtiyaçlarınızı analiz edecek, sektörünüze 
+            uygun modülleri birlikte belirleyecek ve tamamen ücretsiz, kişiselleştirilmiş bir demo planlayacaktır. 
+            Böylece satın alma kararı vermeden önce sistemi gerçek senaryolar 
+            üzerinden detaylı şekilde inceleme fırsatı elde edebilirsiniz.
           </p>
 
           <ul className="demo-features">
@@ -29,7 +69,7 @@ function DemoForm() {
         </div>
 
         <div className="demo-form-card">
-          <h2>Demo Talep Formu</h2>
+          <h2>İletişim ve Demo Talep Formu</h2>
 
           <form className="demo-form">
             <input type="text" placeholder="Ad Soyad" />
@@ -37,17 +77,23 @@ function DemoForm() {
             <input type="email" placeholder="E-posta" />
             <input type="tel" placeholder="Telefon" />
 
-            <select>
-              <option>Sektör Seçiniz</option>
-              <option>Perakende</option>
-              <option>Üretim</option>
-              <option>E-Ticaret</option>
-              <option>Hizmet</option>
+            <select
+              value={selectedSector}
+              onChange={(e) => setSelectedSector(e.target.value)}
+            >
+              <option value="">Sektör Seçiniz</option>
+
+              {sectors.map((sector) => (
+                <option key={sector} value={sector}>
+                  {sector}
+                </option>
+              ))}
             </select>
 
             <textarea
-              rows="4"
-              placeholder="İhtiyaçlarınızı kısaca anlatın..."
+              rows="6"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
 
             <button type="submit" className="demo-submit-btn">
