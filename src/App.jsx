@@ -23,6 +23,7 @@ import AkaryakitPage from "./pages/products/AkaryakitPage";
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingSocials from "./components/FloatingSocials";
 import CTA from "./components/CTA";
+import useSectionScroll from "./hooks/useSectionScroll";
 
 
 
@@ -59,15 +60,28 @@ function Home() {
     );
   }
 
+useSectionScroll([
+    "home",
+    "about",
+    "simulator",
+    "features",
+    "cta",
+    "contact",
+    "footer"
+]);
+
   return (
     <>
       <Navbar />
       <Hero />
+      <AboutUs />
 
-      <section className="simulator-section section-padding" id="simulator">
+      <section className="simulator-section section-padding" id="simulator"data-snap="false">
         <div className="container">
           <div className="section-header">
-            <div className="badge">Test Sürüşü</div>
+
+            
+            
             <h2>Klovo ERP'yi Hemen Deneyin</h2>
             <p>
               Sistemi satın almadan önce bulut panelimizi aşağıda canlı olarak
@@ -75,7 +89,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="demo-device-switcher">
+          <div className="demo-device-switcher" >
             <button
               className={activeDevice === 'phone' ? 'active' : ''}
               onClick={() => setActiveDevice('phone')}
@@ -101,7 +115,7 @@ function Home() {
           {/* <ErpSimulator isStandaloneMode={false} /> */}
         </div>
       </section>
-      <AboutUs />
+      
       <Features />
        <CTA />
       <Contact />

@@ -33,9 +33,7 @@ export default function RestaurantCafePage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        🍽️ Restoran & Cafe Yönetimi
-                                    </span>
+                                    
 
                                     <h1>
                                         Restoran ve Cafe
@@ -86,9 +84,8 @@ export default function RestaurantCafePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                   
+
                                     <h2>Neden Klovo Restoran & Cafe Yönetimi?</h2>
 
                                     <p>
@@ -167,9 +164,7 @@ export default function RestaurantCafePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Program Görselleri
-                                    </span>
+                                  
 
                                     <h2>Restoran Yönetimini Yakından İnceleyin</h2>
 
@@ -294,9 +289,7 @@ export default function RestaurantCafePage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                Restoran Performans
-                                            </span>
+                                           
 
                                             <h2>Operasyonlarınızı Daha Hızlı Yönetin</h2>
 
@@ -349,9 +342,7 @@ export default function RestaurantCafePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                    
 
                                     <h2>Restoran & Cafe Yönetimi Hakkında</h2>
 

@@ -7,7 +7,7 @@ import googlePlay from "/GetItOnGooglePlay_Badge_Web_color_Turkish.png";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="footer-section">
+    <footer className="footer-section" id="footer" data-snap="true">
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">

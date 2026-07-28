@@ -36,9 +36,7 @@ export default function DepotStockPage() {
 
                 <div className="hero-content">
 
-                  <span className="hero-badge">
-                    📦 Depo & Stok Takibi
-                  </span>
+               
 
                   <h1>
                     Depo ve Stok Yönetimini
@@ -93,10 +91,7 @@ export default function DepotStockPage() {
 
                 <div className="section-header">
 
-                  <span className="section-badge">
-                    Avantajlarımız
-                  </span>
-
+                 
                   <h2>Neden Klovo Depo & Stok Takibi?</h2>
 
                   <p>
@@ -170,9 +165,7 @@ export default function DepotStockPage() {
 
                 <div className="section-header">
 
-                  <span className="section-badge">
-                    Program Görselleri
-                  </span>
+                 
 
                   <h2>Programı Yakından İnceleyin</h2>
 
@@ -261,9 +254,7 @@ export default function DepotStockPage() {
 
                     <div className="section-header">
 
-                      <span className="section-badge">
-                        Güven
-                      </span>
+                     
 
                       <h2>İşletmelerin Tercihi</h2>
 
@@ -314,9 +305,7 @@ export default function DepotStockPage() {
 
                 <div className="section-header">
 
-                  <span className="section-badge">
-                    Sık Sorulan Sorular
-                  </span>
+                 
 
                   <h2>Aklınıza Takılan Sorular</h2>
 

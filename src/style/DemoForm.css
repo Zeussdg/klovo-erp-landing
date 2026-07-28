@@ -23,15 +23,7 @@
   gap: 1.5rem;
 }
 
-.demo-badge {
-  width: fit-content;
-  padding: 0.5rem 1rem;
-  border-radius: 999px;
-  background: rgba(38, 118, 247, 0.15);
-  color: #f6803b;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
+
 
 .demo-info h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);

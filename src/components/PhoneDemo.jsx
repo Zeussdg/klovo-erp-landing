@@ -6,16 +6,25 @@ import BarcodeCards from './modules/BarcodeCards';
 
 
 const menuGroups = [
-  ['▣', 'GENEL KARTLAR', ['Stok Sorgula', 'Stok Kartı', 'Barkod Kartları', 'Hizmet Kartı', 'Masraf Kartı', 'Cari Kartı', 'Personel Kartı']],
-  ['◩', 'FİNANSAL KARTLAR', ['Kasa Kartı', 'Kredi Kartı Kartı', 'Pos Kartı', 'Banka Hesap Kartı']],
-  ['☰', 'GENEL EVRAKLAR', ['Alış Proforması', 'Satış Proforması', 'Alış Siparişi', 'Satış Siparişi', 'Alış Teklifi', 'Satış Teklifi', 'Alış İrsaliyesi', 'Satış İrsaliyesi', 'Alış Faturası', 'Satış Faturası']],
-  ['▤', 'FİNANSAL FİŞLER', ['Fiyat Değişikliği Fişi']],
-  ['◫', 'FİNANSAL EVRAKLAR', ['Tahsilat', 'Tediye', 'Çek Girişi', 'Çek Çıkışı', 'Senet Girişi', 'Senet Çıkışı', 'Borç Dekont', 'Alacak Dekont', 'Gelen Havale', 'Giden Havale']],
-  ['⇄', 'HAREKETLER', ['Cari Hareketler']],
-  ['◇', 'GRUPLAR', ['Cari Ana Grup', 'Masraf Grup', 'Stok Ana Grup', 'Stok Alt Grup', 'Stok Kategori', 'Hizmet Ana Grup']],
-  ['▧', 'AÇILIŞ EVRAKLARI', ['Açılış Evrakları', 'Stok Devir Evrakları']],
-  ['▥', 'RAPORLAR', ['Masraf Raporu', 'Kasa Raporu', 'Banka Raporu', 'Cari Durum Raporu', 'Cari Durum Bakiye Raporu', 'Hizmet Durum Raporu', 'Miktarsal ve Finansal Stok Durum Raporu', 'Satış Raporu', 'Alış Raporu', 'Nakit Akış Raporu', 'Kar/Zarar Raporu', 'Z Raporları']],
-  ['⚙', 'AYARLAR', ['Firma Ayarları', 'Kullanıcı Ayarları']],
+  ['💳', 'GENEL KARTLAR', ['Stok Sorgula', 'Stok Kartı', 'Barkod Kartları', 'Hizmet Kartı', 'Masraf Kartı', 'Cari Kartı', 'Personel Kartı']],
+
+  ['💼', 'FİNANSAL KARTLAR', ['Kasa Kartı', 'Kredi Kartı Kartı', 'Pos Kartı', 'Banka Hesap Kartı']],
+
+  ['📄', 'GENEL EVRAKLAR', ['Alış Proforması', 'Satış Proforması', 'Alış Siparişi', 'Satış Siparişi', 'Alış Teklifi', 'Satış Teklifi', 'Alış İrsaliyesi', 'Satış İrsaliyesi', 'Alış Faturası', 'Satış Faturası']],
+
+  ['🧾', 'FİNANSAL FİŞLER', ['Fiyat Değişikliği Fişi']],
+
+  ['📑', 'FİNANSAL EVRAKLAR', ['Tahsilat', 'Tediye', 'Çek Girişi', 'Çek Çıkışı', 'Senet Girişi', 'Senet Çıkışı', 'Borç Dekont', 'Alacak Dekont', 'Gelen Havale', 'Giden Havale']],
+
+  ['🔁', 'HAREKETLER', ['Cari Hareketler']],
+
+  ['🗂️', 'GRUPLAR', ['Cari Ana Grup', 'Masraf Grup', 'Stok Ana Grup', 'Stok Alt Grup', 'Stok Kategori', 'Hizmet Ana Grup']],
+
+  ['📃', 'AÇILIŞ EVRAKLARI', ['Açılış Evrakları', 'Stok Devir Evrakları']],
+
+  ['📊', 'RAPORLAR', ['Masraf Raporu', 'Kasa Raporu', 'Banka Raporu', 'Cari Durum Raporu', 'Cari Durum Bakiye Raporu', 'Hizmet Durum Raporu', 'Miktarsal ve Finansal Stok Durum Raporu', 'Satış Raporu', 'Alış Raporu', 'Nakit Akış Raporu', 'Kar/Zarar Raporu', 'Z Raporları']],
+
+  ['⚙️', 'AYARLAR', ['Firma Ayarları', 'Kullanıcı Ayarları']],
 ];
 
 const cards = [
@@ -97,60 +106,273 @@ export default function PhoneDemo() {
   };
 
 
-  return <div className="phone-demo">
-    <div className="phone"><div className="screen">
-      <div className="statusbar"><span>{clock}</span><span className="status-icons">▣ ◉ ⌁ ▰ {battery}%</span></div>
-      <header className="app-header">
-        <button className="hamburger" onClick={() => setDrawerOpen(true)} aria-label="Menüyü aç">☰</button>
-        <h1>Klovo One Erp</h1>
-        <div className="date"><span>Cuma</span><strong>17.07.2026</strong></div>
-      </header>
-      <main className="dashboard">
-        {cards.map((card) => <article className={`report-card ${card.color}`} key={card.title}>
-          <div className="report-top"><div className="card-icon">{card.icon}</div><div className="card-copy"><h2>{card.title}</h2><p>{card.subtitle}</p></div><button onClick={() => showToast(`${card.title} raporu açılıyor`)}>Rapor</button></div>
-          {card.error ? <p className="error-text">{card.error}</p> : <><strong className="report-total">{card.total}</strong><div className="report-rows">{card.rows.map(([label, value]) => <div key={label}><span>{label}</span><strong>{value}</strong></div>)}</div></>}
-        </article>)}
-      </main>
-      {toast && <div className="toast">{toast}</div>}
-      <div className="home-indicator" />
-      <div className={`drawer-scrim ${drawerOpen ? 'visible' : ''}`} onClick={() => setDrawerOpen(false)} />
-      <aside className={`drawer ${drawerOpen ? 'open' : ''}`}>
-        <div className="user"><div className="avatar">♙</div><div><strong>Yetkili Yetkili</strong><span>Anonim A.Ş. Şirketi</span></div></div>
-        <label className="search"><span>⌕</span><input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Modül ara..." /></label>
-        <div className="menu-scroll"><h3>ANA MODÜLLER</h3>{results.map(([icon, name, children]) => <div className="menu-block" key={name}>
-          <button className="menu-item" onClick={() => setExpanded(expanded === name ? null : name)}><i>{icon}</i><span>{name}</span><b className={expanded === name ? 'rotated' : ''}>⌄</b></button>
-          {expanded === name && <div className="sub-menu">{children.map((child) => <button key={child} onClick={() => openModule(child)}>
-            <span
-              className={`module-dot ${activeModules.includes(child) ? 'active' : 'inactive'
-                }`}
-            />
-            {child}
-          </button>)}</div>}
-        </div>)}
-          {!query && <><h3 className="other-title">DİĞER MODÜLLER</h3><div className="menu-block"><button className="menu-item" onClick={() => setExpanded(expanded === 'PERAKENDE YÖNETİMİ' ? null : 'PERAKENDE YÖNETİMİ')}><i>▤</i><span>PERAKENDE YÖNETİMİ</span><b className={expanded === 'PERAKENDE YÖNETİMİ' ? 'rotated' : ''}>⌄</b></button>{expanded === 'PERAKENDE YÖNETİMİ' && <div className="sub-menu">{['Hızlı Satış (POS)', 'Terminal Yönetimi', 'Kategori Yönetimi', 'Ürün Butonları'].map((item) => <button key={item} onClick={() => { showToast(`${item} açılıyor`); setDrawerOpen(false); }}>{item}</button>)}</div>}</div></>}
-        </div>
-      </aside>
+  return (
+    <div className="phone-demo" >
+      <div className="phone">
+        <div className="screen">
 
-      {activeModule === 'stock-inquiry' && (
-        <StockInquiry
-          onBack={() => setActiveModule('dashboard')}
-          onMenu={() => setDrawerOpen(true)}
-        />
-      )}
+          {powered && (
+            <div className="modal-backdrop">
 
-      {activeModule === 'barcode-cards' && (
-        <BarcodeCards
-          onBack={() => setActiveModule('dashboard')}
-          onMenu={() => setDrawerOpen(true)}
-        />
-      )}
+              <div className="app-modal">
+
+                <button
+                  className="modal-close"
+                  onClick={() => {
+                    setPowered(false);
+                    setDrawerOpen(false);
+                    setActiveModule("dashboard");
+                  }}
+                >
+                  ×
+                </button>
+
+                <div className="app-shell">
+
+                  <div className="statusbar">
+                    <span>{clock}</span>
+                    <span className="status-icons">
+                      ▣ ◉ ⌁ ▰ {battery}%
+                    </span>
+                  </div>
+
+                  <header className="app-header">
+                    <button
+                      className="hamburger"
+                      onClick={() => setDrawerOpen(true)}
+                    >
+                      ☰
+                    </button>
+
+                    <h1>Klovo One Erp</h1>
+
+                    <div className="date">
+                      <span>Cuma</span>
+                      <strong>17.07.2026</strong>
+                    </div>
+                  </header>
+
+                  <main className="dashboard">
+
+                    {cards.map((card) => (
+
+                      <article
+                        className={`report-card ${card.color}`}
+                        key={card.title}
+                      >
+
+                        <div className="report-top">
+
+                          <div className="card-icon">
+                            {card.icon}
+                          </div>
+
+                          <div className="card-copy">
+
+                            <h2>{card.title}</h2>
+
+                            <p>{card.subtitle}</p>
+
+                          </div>
+
+                          <button
+                            onClick={() => showToast(`${card.title} raporu açılıyor`)}
+                          >
+                            Rapor
+                          </button>
+
+                        </div>
+
+                        {card.error ? (
+
+                          <p className="error-text">
+                            {card.error}
+                          </p>
+
+                        ) : (
+
+                          <>
+
+                            <strong className="report-total">
+                              {card.total}
+                            </strong>
+
+                            <div className="report-rows">
+
+                              {card.rows.map(([label, value]) => (
+
+                                <div key={label}>
+
+                                  <span>{label}</span>
+
+                                  <strong>{value}</strong>
+
+                                </div>
+
+                              ))}
+
+                            </div>
+
+                          </>
+
+                        )}
+
+                      </article>
+
+                    ))}
+
+                  </main>
+
+                  {toast && (
+                    <div className="toast">
+                      {toast}
+                    </div>
+                  )}
+
+                  <div className="home-indicator" />
+
+                  <div
+                    className={`drawer-scrim ${drawerOpen ? "visible" : ""}`}
+                    onClick={() => setDrawerOpen(false)}
+                  />
+
+                  <aside className={`drawer ${drawerOpen ? "open" : ""}`}>
+                    <div className="user">
+                      <div className="avatar">♙</div>
+
+                      <div>
+                        <strong>Yetkili Yetkili</strong>
+                        <span>Anonim A.Ş. Şirketi</span>
+                      </div>
+                    </div>
+
+                    <label className="search">
+                      <span>⌕</span>
+
+                      <input
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        placeholder="Modül ara..."
+                      />
+                    </label>
+
+                    <div className="menu-scroll">
+                      <h3>ANA MODÜLLER</h3>
+
+                      {results.map(([icon, name, children]) => (
+                        <div className="menu-block" key={name}>
+                          <button
+                            className="menu-item"
+                            onClick={() => setExpanded(expanded === name ? null : name)}
+                          >
+                            <i>{icon}</i>
+                            <span>{name}</span>
+                            <b className={expanded === name ? "rotated" : ""}>⌄</b>
+                          </button>
+
+                          {expanded === name && (
+                            <div className="sub-menu">
+                              {children.map((child) => (
+                                <button key={child} onClick={() => openModule(child)}>
+                                  <span
+                                    className={`module-dot ${activeModules.includes(child)
+                                        ? "active"
+                                        : "inactive"
+                                      }`}
+                                  />
+                                  {child}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+
+                      {!query && (
+                        <>
+                          <h3 className="other-title">DİĞER MODÜLLER</h3>
+
+                          <div className="menu-block">
+                            <button
+                              className="menu-item"
+                              onClick={() =>
+                                setExpanded(
+                                  expanded === "PERAKENDE YÖNETİMİ"
+                                    ? null
+                                    : "PERAKENDE YÖNETİMİ"
+                                )
+                              }
+                            >
+                              <i>▤</i>
+                              <span>PERAKENDE YÖNETİMİ</span>
+                              <b
+                                className={
+                                  expanded === "PERAKENDE YÖNETİMİ"
+                                    ? "rotated"
+                                    : ""
+                                }
+                              >
+                                ⌄
+                              </b>
+                            </button>
+
+                            {expanded === "PERAKENDE YÖNETİMİ" && (
+                              <div className="sub-menu">
+                                {[
+                                  "Hızlı Satış (POS)",
+                                  "Terminal Yönetimi",
+                                  "Kategori Yönetimi",
+                                  "Ürün Butonları",
+                                ].map((item) => (
+                                  <button
+                                    key={item}
+                                    onClick={() => {
+                                      showToast(`${item} açılıyor`);
+                                      setDrawerOpen(false);
+                                    }}
+                                  >
+                                    {item}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </>
+                      )}
+                    </div>
+                  </aside>
+
+                  {activeModule === "stock-inquiry" && (
+
+                    <StockInquiry
+                      onBack={() => setActiveModule("dashboard")}
+                      onMenu={() => setDrawerOpen(true)}
+                    />
+
+                  )}
+
+                  {activeModule === "barcode-cards" && (
+
+                    <BarcodeCards
+                      onBack={() => setActiveModule("dashboard")}
+                      onMenu={() => setDrawerOpen(true)}
+                    />
+
+                  )}
+
+                </div>
+
+              </div>
+
+            </div>
+          )}
 
 
-      <div className={`power-screen ${powered ? 'off' : ''}`}>
-        <button className="power-btn" onClick={powerOn} aria-label="Demoyu aç">⏻</button>
-        <strong>Demoyu aktif hâle getirmek için basın</strong>
-        <span>Kaynak tasarrufu için demo bekleme modunda</span>
-      </div>
-    </div></div>
-  </div>;
+          <div className={`power-screen ${powered ? 'off' : ''}`}>
+            <button className="power-btn" onClick={powerOn} aria-label="Demoyu aç">⏻</button>
+            <strong>Demoyu aktif hâle getirmek için basın</strong>
+            <span>Kaynak tasarrufu için demo bekleme modunda</span>
+          </div>
+        </div></div>
+    </div>);
 }

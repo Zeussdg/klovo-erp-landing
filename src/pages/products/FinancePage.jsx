@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
 import ImagePreview from "../../style/ImagePreview";
-import finance1 from "./images/finance/finance1.png";
-import finance3 from "./images/finance/finance3.png";
-import Cari from "./images/finance/cariHareket.png"
+import finance1 from "./images/finance/finans1.png";
+import finance3 from "./images/finance/finans3.png";
+import Cari from "./images/finance/finans2.png"
 
 export default function FinancePage() {
     return (
@@ -33,9 +33,7 @@ export default function FinancePage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        💰 Finans Yönetimi
-                                    </span>
+                                   
 
                                     <h1>
                                         İşletmenizin
@@ -88,9 +86,7 @@ export default function FinancePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                    
                                     <h2>Neden Klovo Finans Yönetimi?</h2>
 
                                     <p>
@@ -169,9 +165,7 @@ export default function FinancePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Program Görselleri
-                                    </span>
+                                 
 
                                     <h2>Finans Yönetimini Yakından İnceleyin</h2>
 
@@ -299,9 +293,7 @@ export default function FinancePage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                Finansal Performans
-                                            </span>
+                                         
 
                                             <h2>İşletmenizin Finansını Kontrol Altında Tutun</h2>
 
@@ -354,9 +346,7 @@ export default function FinancePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                  
 
                                     <h2>Finansal Yönetim Hakkında</h2>
 

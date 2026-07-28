@@ -29,9 +29,7 @@ export default function AkaryakitPage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        ⛽ Akaryakıt Yönetimi
-                                    </span>
+                                
 
                                     <h1>
                                         Akaryakıt
@@ -83,9 +81,7 @@ export default function AkaryakitPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                   
                                     <h2>Neden Klovo Akaryakıt Yönetimi?</h2>
 
                                     <p>
@@ -182,9 +178,6 @@ export default function AkaryakitPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Program Görselleri
-                                    </span>
 
                                     <h2>Akaryakıt Operasyonlarını Yakından İnceleyin</h2>
 
@@ -300,9 +293,7 @@ export default function AkaryakitPage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                Performans
-                                            </span>
+                                            
 
                                             <h2>Akaryakıt Operasyonlarınızı Veriye Dönüştürün</h2>
 
@@ -360,9 +351,7 @@ export default function AkaryakitPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                   
 
                                     <h2>Akaryakıt Yönetimi Hakkında</h2>
 

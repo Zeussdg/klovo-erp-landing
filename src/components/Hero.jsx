@@ -1,19 +1,17 @@
 import React from 'react';
 import { Shield, Zap, Cloud, ArrowRight } from 'lucide-react';
-
+import '../index.css'
 import Hero3D from "/src/3DMockup/Hero3D";
 
 export default function Hero() {
   return (
-    <section className="hero-section" id="home">
+    <section className="hero-section" id="home" data-snap="true">
       <div className="glow-bg glow-blue"></div>
       <div className="glow-bg glow-purple"></div>
       
       <div className="container hero-container grid-2">
          <div className="hero-content">
-          <div className="badge">
-            <Cloud size={14} style={{ marginRight: '0.4rem' }} /> Bulut Tabanlı ERP Çözümü
-          </div>
+         
           <h1>
             İşletmenizi Bulutun Gücüyle <span className="text-gradient">Yönetin</span>
           </h1>

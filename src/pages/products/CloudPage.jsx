@@ -29,9 +29,7 @@ export default function CloudPage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        ☁️ Cloud Altyapı Hizmetleri
-                                    </span>
+                                    
 
                                     <h1>
                                         İşletmenizi Güvenli
@@ -81,9 +79,7 @@ export default function CloudPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                 
                                     <h2>Neden Klovo Cloud?</h2>
                                     <p>
                                         İşletmenizin verilerini güvenli, hızlı ve kesintisiz bir
@@ -161,9 +157,7 @@ export default function CloudPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Program Görselleri
-                                    </span>
+                                   
 
                                     <h2>Programı Yakından İnceleyin</h2>
 
@@ -270,9 +264,7 @@ export default function CloudPage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                Neden Klovo Cloud?
-                                            </span>
+                                            
 
                                             <h2>İşletmeniz İçin Güçlü Bulut Altyapısı</h2>
 
@@ -326,9 +318,7 @@ export default function CloudPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                  
 
                                     <h2>Cloud Altyapı Hizmetleri Hakkında</h2>
 

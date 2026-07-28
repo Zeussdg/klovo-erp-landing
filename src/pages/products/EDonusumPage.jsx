@@ -33,9 +33,7 @@ export default function EDonusumPage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        📄 E-Dönüşüm
-                                    </span>
+                                  
 
                                     <h1>
                                         E-Dönüşüm &
@@ -61,7 +59,7 @@ export default function EDonusumPage() {
 
                                         <li>✔ E-İrsaliye</li>
 
-                                        <li>✔ GİB uyumlu altyapı</li>
+                                        
 
                                     </ul>
 
@@ -89,9 +87,7 @@ export default function EDonusumPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                   
                                     <h2>Neden Klovo E-Dönüşüm?</h2>
                                     <p>
                                         Elektronik belge süreçlerinizi hızlandırın,
@@ -134,27 +130,13 @@ export default function EDonusumPage() {
                                             <ShieldCheck size={24} />
                                         </div>
 
-                                        <h3> GİB Uyumlu</h3>
-                                        <p> Güncel Gelir İdaresi Başkanlığı standartlarına uyumlu altyapı.</p>
-                                    </div>
-
-                                    <div className="why-card">
-                                        <div className="why-icon">
-                                            < Zap size={24} />
-                                        </div>
+                                        
 
                                         <h3> Hızlı İşlem</h3>
                                         <p>Manuel evrak süreçlerini ortadan kaldırarak zamandan tasarruf edin.</p>
                                     </div>
 
-                                    <div className="why-card">
-                                        <div className="why-icon">
-                                            <Cloud size={24} />
-                                        </div>
-
-                                        <h3> Bulut Desteği</h3>
-                                        <p> Belgelerinize internet olan her yerden güvenli şekilde erişin.</p>
-                                    </div>
+                                
 
                                 </div>
 
@@ -169,9 +151,7 @@ export default function EDonusumPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Program Görselleri
-                                    </span>
+                                  
 
                                     <h2>E-Dönüşüm Süreçlerini Yakından İnceleyin</h2>
 
@@ -278,7 +258,7 @@ export default function EDonusumPage() {
 
                                         <ul>
 
-                                            <li>✔ GİB uyumlu altyapı</li>
+                                            
 
                                             <li>✔ E-İrsaliye desteği</li>
 
@@ -301,9 +281,7 @@ export default function EDonusumPage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                E-Dönüşüm Performansı
-                                            </span>
+                                          
 
                                             <h2>Dijital Belge Süreçlerinde Hız ve Güven</h2>
 
@@ -356,9 +334,7 @@ export default function EDonusumPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                   
 
                                     <h2>E-Dönüşüm Hakkında</h2>
 

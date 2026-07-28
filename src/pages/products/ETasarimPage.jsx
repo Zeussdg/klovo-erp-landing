@@ -32,9 +32,7 @@ export default function ETasarimPage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        💻 E-Tasarım & Geliştirme
-                                    </span>
+                                    
 
                                     <h1>
                                         İşletmenize Özel
@@ -85,9 +83,7 @@ export default function ETasarimPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                   
                                     <h2>Neden Klovo Yazılım Geliştirme?</h2>
 
                                     <p>
@@ -165,9 +161,7 @@ export default function ETasarimPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Geliştirdiğimiz Çözümler
-                                    </span>
+                                   
 
                                     <h2>İşletmenize Özel Dijital Çözümler</h2>
 
@@ -254,9 +248,7 @@ export default function ETasarimPage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                Yazılım Gücü
-                                            </span>
+                                          
 
                                             <h2>İhtiyacınıza Uygun Teknoloji Çözümleri</h2>
 
@@ -309,9 +301,7 @@ export default function ETasarimPage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                   
 
                                     <h2>Yazılım Geliştirme Hakkında</h2>
 

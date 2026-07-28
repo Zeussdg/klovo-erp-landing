@@ -34,9 +34,7 @@ export default function PerakendePage() {
 
                                 <div className="hero-content">
 
-                                    <span className="hero-badge">
-                                        🛍️ Perakende Yönetimi
-                                    </span>
+                            
 
                                     <h1>
                                         Mağaza ve
@@ -88,9 +86,7 @@ export default function PerakendePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Avantajlarımız
-                                    </span>
+                                   
                                     <h2>Neden Klovo Perakende Yönetimi?</h2>
 
                                     <p>
@@ -187,9 +183,7 @@ export default function PerakendePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Program Görselleri
-                                    </span>
+                                 
 
                                     <h2>Perakende Yönetimini Yakından İnceleyin</h2>
 
@@ -315,9 +309,7 @@ export default function PerakendePage() {
 
                                         <div className="section-header">
 
-                                            <span className="section-badge">
-                                                Performans
-                                            </span>
+                                           
 
                                             <h2>Mağazanızın Performansını Anlık Takip Edin</h2>
 
@@ -374,9 +366,7 @@ export default function PerakendePage() {
 
                                 <div className="section-header">
 
-                                    <span className="section-badge">
-                                        Sık Sorulan Sorular
-                                    </span>
+                                
 
                                     <h2>Perakende Yönetimi Hakkında</h2>
 

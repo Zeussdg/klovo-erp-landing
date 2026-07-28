@@ -3,6 +3,7 @@ import { Search, Check } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import "./CTA.css";
 import { modules } from "../pages/products/moduleData";
+import Select from "react-select";
 
 const sectors = [
   "Perakende",
@@ -27,12 +28,7 @@ const companySizes = [
   "60+",
 ];
 
-const budgets = [
-  "20.000 ₺ altı",
-  "20.000 - 45.000 ₺",
-  "45.000 - 75.000 ₺",
-  "75.000 ₺ +",
-];
+
 
 export default function CTA() {
 
@@ -44,7 +40,17 @@ export default function CTA() {
 
   const [companySize, setCompanySize] = useState("");
 
-  const [budget, setBudget] = useState("");
+
+  const sectorOptions = sectors.map((item) => ({
+    value: item,
+    label: item,
+  }));
+
+  const companyOptions = companySizes.map((item) => ({
+    value: item,
+    label: item,
+  }));
+
 
 
   const handleDemo = () => {
@@ -52,8 +58,8 @@ export default function CTA() {
     if (
       selectedModules.length === 0 ||
       !sector ||
-      !companySize ||
-      !budget
+      !companySize
+
     ) {
 
       alert("Lütfen tüm alanları doldurun.");
@@ -72,7 +78,7 @@ export default function CTA() {
 
         companySize,
 
-        budget,
+
 
       },
 
@@ -80,16 +86,16 @@ export default function CTA() {
 
   };
   const toggleModule = (module) => {
-  setSelectedModules((prev) => {
-    if (prev.includes(module)) {
-      return prev.filter((item) => item !== module);
-    }
+    setSelectedModules((prev) => {
+      if (prev.includes(module)) {
+        return prev.filter((item) => item !== module);
+      }
 
-    return [...prev, module];
-  });
-};
-    return (
-    <section className="cta section-padding" id="cta">
+      return [...prev, module];
+    });
+  };
+  return (
+    <section className="cta section-padding" id="cta" data-snap="true">
       <div className="container">
 
         <div className="cta-panel">
@@ -159,27 +165,13 @@ export default function CTA() {
 
               <label>Sektör</label>
 
-              <select
-                value={sector}
-                onChange={(e) => setSector(e.target.value)}
-              >
-
-                <option value="">
-                  Seçiniz
-                </option>
-
-                {sectors.map((item) => (
-
-                  <option
-                    key={item}
-                    value={item}
-                  >
-                    {item}
-                  </option>
-
-                ))}
-
-              </select>
+              <Select
+                options={sectorOptions}
+                value={sectorOptions.find((option) => option.value === sector)}
+                onChange={(selected) => setSector(selected.value)}
+                placeholder="Sektör Seçiniz"
+                isSearchable={false}
+              />
 
             </div>
 
@@ -187,59 +179,17 @@ export default function CTA() {
 
               <label>Şirket Büyüklüğü</label>
 
-              <select
-                value={companySize}
-                onChange={(e) =>
-                  setCompanySize(e.target.value)
-                }
-              >
-
-                <option value="">
-                  Seçiniz
-                </option>
-
-                {companySizes.map((item) => (
-
-                  <option
-                    key={item}
-                    value={item}
-                  >
-                    {item}
-                  </option>
-
-                ))}
-
-              </select>
+              <Select
+                options={companyOptions}
+                value={companyOptions.find((option) => option.value === companySize)}
+                onChange={(selected) => setCompanySize(selected.value)}
+                placeholder="Şirket Büyüklüğü"
+                isSearchable={false}
+              />
 
             </div>
 
-            <div className="field">
 
-              <label>Bütçe</label>
-
-              <select
-                value={budget}
-                onChange={(e) => setBudget(e.target.value)}
-              >
-
-                <option value="">
-                  Seçiniz
-                </option>
-
-                {budgets.map((item) => (
-
-                  <option
-                    key={item}
-                    value={item}
-                  >
-                    {item}
-                  </option>
-
-                ))}
-
-              </select>
-
-            </div>
 
           </div>
 

@@ -29,9 +29,7 @@ export default function ApiIntegrationPage() {
 
             <div className="hero-content">
 
-              <span className="hero-badge">
-                🔗 API Entegrasyonu
-                </span>
+            
 
               <h1>
                 Tüm Sistemlerinizi
@@ -83,9 +81,7 @@ export default function ApiIntegrationPage() {
 
         <div className="section-header">
 
-            <span className="section-badge">
-             Avantajlarımız
-            </span>
+          
             <h2>Neden Klovo API Entegrasyonu?</h2>
             <p>
                 Farklı platformlar arasında veri aktarımını otomatikleştirin,
@@ -163,9 +159,7 @@ export default function ApiIntegrationPage() {
 
         <div className="section-header">
 
-            <span className="section-badge">
-                Program Görselleri
-            </span>
+            
 
             <h2>Programı Yakından İnceleyin</h2>
 
@@ -285,9 +279,7 @@ export default function ApiIntegrationPage() {
 
         <div className="section-header">
 
-            <span className="section-badge">
-                Performans
-            </span>
+           
 
             <h2>Yüksek Performanslı API Altyapısı</h2>
 
@@ -338,9 +330,7 @@ export default function ApiIntegrationPage() {
 
     <div className="section-header">
 
-      <span className="section-badge">
-        Sık Sorulan Sorular
-      </span>
+     
 
       <h2>API Entegrasyonu Hakkında</h2>
 

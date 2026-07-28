@@ -92,8 +92,8 @@ export default function Navbar() {
                   <Archive size={16} />
                 </div>
                 <div>
-                  <h4>E-Dönüşüm,E-Fatura & E-Arşiv</h4>
-                  <p>Elektronik fatura ve arşivleme çözümleri. E-dönüşüm merkezi.</p>
+                  <h4>E-Dönüşüm</h4>
+                  <p>E-Fatura , E-Arşiv & E-İrsaliye</p>
                 </div>
               </HashLink>
 

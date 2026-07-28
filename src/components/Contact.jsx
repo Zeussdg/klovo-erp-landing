@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Phone, MapPin, Send, Check } from 'lucide-react';
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+const CONTACT_TEMPLATE_ID =
+  import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -27,30 +34,57 @@ export default function Contact() {
     return () => window.removeEventListener('klovo-request-key', handleRequestKey);
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    
-    setIsLoading(true);
-    // Simulate API request
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.message) {
+    return;
+  }
+
+  setIsLoading(true);
+
+  try {
+    await emailjs.send(
+      SERVICE_ID,
+      CONTACT_TEMPLATE_ID,
+      {
+        name: formData.name,
+        company: formData.company,
+        phone: formData.phone,
+        email: formData.email,
+        sector: "İletişim Formu",
+        message: formData.message,
+      },
+      PUBLIC_KEY
+    );
+
+    setIsSubmitted(true);
+
+    setFormData({
+      name: "",
+      company: "",
+      phone: "",
+      email: "",
+      message: "",
+    });
+
     setTimeout(() => {
-      setIsLoading(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', company: '', phone: '', email: '', message: '' });
-      
-      // Auto dismiss success message
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 5000);
-    }, 1200);
-  };
+      setIsSubmitted(false);
+    }, 5000);
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    alert("Mesaj gönderilirken bir hata oluştu.");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   return (
-    <section className="contact-section section-padding" id="contact">
+    <section className="contact-section section-padding" id="contact" data-snap="true">
       <div className="container grid-2">
         {/* Contact Info Details */}
         <div className="contact-info">
-          <div className="badge">İletişim</div>
+          
           <h2>Bize Ulaşın</h2>
           <p className="contact-sub">
             Klovo ERP hakkında daha fazla bilgi almak, özel entegrasyon taleplerinizi iletmek veya işletmenize özel demo planlamak için bizimle iletişime geçebilirsiniz.

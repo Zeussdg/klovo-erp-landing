@@ -63,10 +63,10 @@ export default function Features() {
   ];
 
   return (
-    <section className="features-section section-padding" id="features">
+    <section className="features-section section-padding" id="features" data-snap="true">
       <div className="container">
-        <div className="section-header">
-          <div className="badge">Özellikler</div>
+        <div className="section-header features-header">
+          
           <h2>Modüllerimiz ile Gücünüze Güç Katın</h2>
           <p>
             Klovo ERP, işletmenizin ihtiyacı olan tüm yönetim araçlarını tek bir çatı altında esnek ve ölçeklenebilir şekilde sunar.
