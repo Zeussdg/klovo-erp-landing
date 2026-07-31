@@ -42,16 +42,17 @@ export default function FloatingSocials() {
       </a>
 
     </div>
-    <a
-      href="https://wa.me/908503463201"
-      target="_blank">
-    <button
-      className="whatsapp-btn"
-      onMouseEnter={() => setOpen(true)}
-    >
-      <FaWhatsapp size={28}/>
-    </button>
-    </a>
+   <a
+  href="https://wa.me/908503463201"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="whatsapp-btn"
+  aria-label="WhatsApp ile iletişime geç"
+  onMouseEnter={() => setOpen(true)}
+>
+  <span className="social-label">WhatsApp</span>
+  <FaWhatsapp size={28} aria-hidden="true" />
+</a>
 
   </div>
 );

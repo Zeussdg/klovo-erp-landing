@@ -2,16 +2,21 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import "../../style/products/DepotStockPage.css";
 import {
-    Cloud,
-    ShieldCheck,
-    DatabaseBackup,
-    Zap,
-    Globe,
-    ChartNoAxesCombined
+    Truck,
+    ClipboardList,
+    FileCheck,
+    PackageCheck,
+    BarChart,
+    Handshake
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
 
-export default function CloudPage() {
+import ImagePreview from "../../style/ImagePreview";
+import Main from "./images/satinAlmaTedarikci/satin_alma_tedarikci.png";
+import Main1 from "./images/satinAlmaTedarikci/tedarikci.png";
+import Main2 from "./images/satinAlmaTedarikci/stok_kartı.png";
+
+export default function SatinalmaTedarikciPage() {
     return (
         <>
             <Navbar />
@@ -29,43 +34,32 @@ export default function CloudPage() {
 
                                 <div className="hero-content">
 
-                                    
+
 
                                     <h1>
-                                        İşletmenizi Güvenli
+                                        Tedarik Süreçlerinizi
                                         <br />
-                                        Bulut Altyapısına Taşıyın
+                                        Kontrol Altına Alın
                                     </h1>
 
                                     <p>
-                                        Klovo Cloud Altyapı Hizmetleri ile sunucu yönetimi,
-                                        otomatik yedekleme, yüksek erişilebilirlik ve güçlü
-                                        güvenlik çözümlerini tek platform üzerinden yönetin.
+                                        Klovo Satın Alma ve Tedarikçi Yönetimi ile teklif toplama, sipariş oluşturma, mal kabul, tedarikçi performansı ve satın alma süreçlerinizi tek platform üzerinden yönetin.
+                                        Maliyetlerinizi düşürürken tedarik zincirinizi güçlendirin.
                                     </p>
 
                                     <ul className="hero-list">
 
-                                        <li>✔  %99.9 erişilebilirlik</li>
+                                        <li>✔  Satın Alma Talepleri</li>
 
-                                        <li>✔ Otomatik yedekleme</li>
+                                        <li>✔ Tedarikçi Yönetimi</li>
 
-                                        <li>✔ Güvenli veri depolama</li>
+                                        <li>✔ Sipariş ve Mal Kabul</li>
 
-                                        <li>✔ Her yerden erişim</li>
+                                        <li>✔ Maliyet Analizleri</li>
 
                                     </ul>
 
-                                    <div className="hero-buttons">
 
-                                        <button className="btn btn-primary">
-                                            Demo Talep Et
-                                        </button>
-
-                                        <button className="btn btn-secondary">
-                                            Teklif Al
-                                        </button>
-
-                                    </div>
 
                                 </div>
 
@@ -79,8 +73,8 @@ export default function CloudPage() {
 
                                 <div className="section-header">
 
-                                 
-                                    <h2>Neden Klovo Cloud?</h2>
+
+                                    <h2>Neden Klovo Satın Alma Yönetimi?</h2>
                                     <p>
                                         İşletmenizin verilerini güvenli, hızlı ve kesintisiz bir
                                         bulut altyapısında yönetin. Sunucu maliyetlerini azaltın,
@@ -92,56 +86,56 @@ export default function CloudPage() {
 
                                     <div className="why-card">
                                         <div className="why-icon">
-                                            <Cloud size={24} />
+                                            < Truck size={24} />
                                         </div>
-                                        <h3>Bulut Altyapısı</h3>
-                                        <p>Sunucu kurulumuna ihtiyaç duymadan sistemi anında kullanmaya başlayın.</p>
+                                        <h3>Satın Alma Talepleri</h3>
+                                        <p>Departmanlardan gelen satın alma taleplerini kolayca oluşturun, onaylayın ve takip edin.</p>
                                     </div>
 
                                     <div className="why-card">
 
                                         <div className="why-icon">
-                                            <ShieldCheck size={24} />
+                                            < ClipboardList size={24} />
                                         </div>
 
-                                        <h3>Gelişmiş Güvenlik</h3>
-                                        <p>Verileriniz modern güvenlik standartları ile korunur.</p>
+                                        <h3>Tedarikçi Yönetimi</h3>
+                                        <p>Tüm tedarikçi bilgilerini, iletişim kayıtlarını ve performanslarını tek merkezden yönetin.</p>
                                     </div>
 
                                     <div className="why-card">
                                         <div className="why-icon">
-                                            <DatabaseBackup size={24} />
+                                            <FileCheck size={24} />
                                         </div>
 
-                                        <h3> Otomatik Yedekleme</h3>
-                                        <p> Düzenli yedekleme sayesinde veri kaybı riskini en aza indirin.</p>
+                                        <h3> Satın Alma Siparişleri</h3>
+                                        <p> Onaylanan talepleri hızlıca siparişe dönüştürün ve sipariş süreçlerini anlık takip edin.</p>
                                     </div>
 
                                     <div className="why-card">
                                         <div className="why-icon">
-                                            <Zap size={24} />
+                                            <PackageCheck size={24} />
                                         </div>
 
-                                        <h3> Yüksek Performans</h3>
-                                        <p> Güçlü sunucu altyapısı ile kesintisiz çalışma deneyimi yaşayın.</p>
+                                        <h3> Mal Kabul</h3>
+                                        <p> Gelen ürünlerin teslimatlarını kayıt altına alın ve stoklarla otomatik eşleştirin.</p>
                                     </div>
 
                                     <div className="why-card">
                                         <div className="why-icon">
-                                            < Globe size={24} />
+                                            <  BarChart size={24} />
                                         </div>
 
-                                        <h3> Her Yerden Erişim</h3>
-                                        <p>İnternet bağlantısı olan her cihazdan güvenli şekilde sisteme ulaşın.</p>
+                                        <h3> Maliyet Analizi</h3>
+                                        <p>Ürün bazında satın alma maliyetlerini analiz ederek daha doğru kararlar alın.</p>
                                     </div>
 
                                     <div className="why-card">
                                         <div className="why-icon">
-                                            <ChartNoAxesCombined size={24} />
+                                            < Handshake size={24} />
                                         </div>
 
-                                        <h3> Kolay Ölçeklenebilirlik</h3>
-                                        <p> İşletmeniz büyüdükçe altyapınızı kolayca genişletebilirsiniz.</p>
+                                        <h3>Performans Takibi</h3>
+                                        <p> Teslim süreleri, fiyat avantajları ve tedarikçi performanslarını raporlayın.</p>
                                     </div>
 
                                 </div>
@@ -157,42 +151,43 @@ export default function CloudPage() {
 
                                 <div className="section-header">
 
-                                   
 
-                                    <h2>Programı Yakından İnceleyin</h2>
+
+                                    <h2>Satın Alma Süreçlerinizi Yakından İnceleyin</h2>
 
                                     <p>
-                                        Cloud yönetim panelimizi inceleyerek sunucu yönetimi,
-                                        otomatik yedekleme, güvenlik ve sistem izleme
-                                        özelliklerini yakından keşfedin.
+                                        Klovo Satın Alma ve Tedarikçi Yönetimi modülü ile talep oluşturma, sipariş yönetimi, mal kabul ve tedarikçi takibini tek platform üzerinden yönetin.
+
                                     </p>
 
                                 </div>
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main}
+                                            alt="2"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
 
-                                        <h3>Bulut Tabanlı Yönetim Paneli</h3>
+                                        <h3>Talep, Teklif ve Sipariş Süreçleri</h3>
 
                                         <p>
-                                            Tüm sunucu ve sistem kaynaklarınızı tek panel üzerinden
-                                            izleyin. CPU, RAM, depolama alanı ve sistem durumunu
-                                            gerçek zamanlı olarak takip edin.
+                                            Satın alma taleplerini oluşturun, farklı tedarikçilerden teklifler
+                                            alın ve en uygun teklifi siparişe dönüştürün.
                                         </p>
 
                                         <ul>
 
-                                            <li>✔ Canlı sistem durumu</li>
+                                            <li>✔ Satın alma talebi</li>
 
-                                            <li>✔ Kaynak kullanım analizi</li>
+                                            <li>✔ Teklif karşılaştırma</li>
 
-                                            <li>✔ Sunucu performans raporları</li>
+                                            <li>✔ Sipariş oluşturma</li>
 
-                                            <li>✔ Tek panelden yönetim</li>
+                                            <li>✔ Onay süreçleri</li>
 
                                         </ul>
 
@@ -204,25 +199,27 @@ export default function CloudPage() {
 
                                     <div className="showcase-content">
 
-                                        <h3>Otomatik Yedekleme ve Kurtarma</h3>
+                                        <h3>Tedarikçi Yönetimi</h3>
 
                                         <p>
-                                            Verileriniz düzenli olarak otomatik yedeklenir.
-                                            İhtiyaç duyduğunuzda tek tıkla eski sürümlere
-                                            güvenli şekilde geri dönebilirsiniz.
+                                            Tedarikçilerinizin iletişim bilgilerini, sözleşmelerini, ödeme koşullarını ve
+                                            geçmiş siparişlerini tek ekranda yönetin.
                                         </p>
 
                                         <ul>
-                                            <li>✔ Günlük otomatik yedekleme</li>
-                                            <li>✔ Hızlı geri yükleme</li>
-                                            <li>✔ Sürüm geçmişi</li>
-                                            <li>✔ Güvenli veri saklama</li>
+                                            <li>✔ Tedarikçi kartları</li>
+                                            <li>✔ Geçmiş siparişler</li>
+                                            <li>✔ Ödeme koşulları</li>
+
                                         </ul>
 
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main1}
+                                            alt="2"
+                                        />
                                     </div>
                                 </div>
 
@@ -232,23 +229,26 @@ export default function CloudPage() {
                                 <div className="feature-showcase">
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
-                                        <span>Program Ekran Görüntüsü</span>
+                                        <ImagePreview
+                                            src={Main2}
+                                            alt="2"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
 
-                                        <h3>Güvenlik ve Kullanıcı Yetkilendirme</h3>
+                                        <h3>Mal Kabul ve Maliyet Kontrolü</h3>
 
                                         <p>
-                                            Kullanıcı rollerini yönetin, erişim izinlerini
-                                            belirleyin ve tüm sistem hareketlerini kayıt altına alın.
+                                            Teslim alınan ürünleri anında stoklara aktarın ve satın alma maliyetlerini detaylı raporlarla analiz edin.
+
                                         </p>
 
                                         <ul>
-                                            <li>✔ Rol bazlı yetkilendirme</li>
-                                            <li>✔ SSL ile güvenli bağlantı</li>
-                                            <li>✔ Giriş kayıtları</li>
-                                            <li>✔ Yetki yönetimi</li>
+                                            <li>✔ Mal kabul işlemleri</li>
+                                            <li>✔ Otomatik stok aktarımı</li>
+                                            <li>✔ Maliyet raporları</li>
+                                            <li>✔ Satın alma analizleri</li>
                                         </ul>
 
                                     </div>
@@ -264,14 +264,13 @@ export default function CloudPage() {
 
                                         <div className="section-header">
 
-                                            
 
-                                            <h2>İşletmeniz İçin Güçlü Bulut Altyapısı</h2>
+
+                                            <h2>Verimli Satın Alma, Güçlü Tedarik Zinciri</h2>
 
                                             <p>
-                                                Güvenli veri depolama, kesintisiz erişim ve yüksek performans
-                                                sunan cloud altyapımız ile işletmenizin dijital dönüşümünü
-                                                güvenle destekleyin.
+                                                Klovo Satın Alma ve Tedarikçi Yönetimi ile tüm satın alma süreçlerinizi
+                                                analiz edin, maliyetlerinizi optimize edin ve tedarik zincirinizi güvenle yönetin.
                                             </p>
 
                                         </div>
@@ -279,23 +278,23 @@ export default function CloudPage() {
                                         <div className="stats-grid">
 
                                             <div className="stat-card">
-                                                <h3>%99.9</h3>
-                                                <p>Kesintisiz Erişim</p>
+                                                <h3>%30</h3>
+                                                <p>Daha Düşük Satın Alma Maliyeti</p>
                                             </div>
 
                                             <div className="stat-card">
                                                 <h3>7/24</h3>
-                                                <p>Sistem İzleme</p>
+                                                <p>Sipariş Takibi</p>
                                             </div>
 
                                             <div className="stat-card">
-                                                <h3>256 Bit</h3>
-                                                <p>SSL Güvenliği</p>
+                                                <h3>5000+</h3>
+                                                <p>Tedarikçi Kaydı</p>
                                             </div>
 
                                             <div className="stat-card">
-                                                <h3>Otomatik</h3>
-                                                <p>Yedekleme</p>
+                                                <h3>100%</h3>
+                                                <p>İzlenebilir Süreç</p>
                                             </div>
 
                                         </div>
@@ -318,13 +317,13 @@ export default function CloudPage() {
 
                                 <div className="section-header">
 
-                                  
 
-                                    <h2>Cloud Altyapı Hizmetleri Hakkında</h2>
+
+                                    <h2>Satın Alma ve Tedarikçi Yönetimi Hakkında</h2>
 
                                     <p>
-                                        Klovo Cloud Altyapı Hizmetleri ile ilgili sık sorulan sorulara
-                                        göz atarak hizmetimiz hakkında daha detaylı bilgi edinebilirsiniz.
+                                        Satın alma süreçleri, tedarikçi yönetimi ve sipariş operasyonları hakkında en sık sorulan soruları sizin için yanıtladık.
+
                                     </p>
 
                                 </div>
@@ -332,37 +331,37 @@ export default function CloudPage() {
                                 <div className="faq-list">
 
                                     <details className="faq-item">
-                                        <summary>Verilerim nerede saklanıyor?</summary>
+                                        <summary>Satın alma talepleri oluşturabilir miyim?</summary>
 
                                         <p>
-                                            Verileriniz güvenli bulut sunucularında, düzenli yedekleme ve
-                                            erişim kontrolleriyle korunmaktadır.
+                                            Evet. Departman bazlı satın alma talepleri
+                                            oluşturabilir, onay süreçlerini takip edebilirsiniz.
                                         </p>
                                     </details>
 
                                     <details className="faq-item">
-                                        <summary>Otomatik yedekleme yapılıyor mu?</summary>
+                                        <summary>Tedarikçi performansı ölçülebiliyor mu?</summary>
 
                                         <p>
-                                            Evet. Sistem belirlenen periyotlarda otomatik yedekleme alır.
+                                            Evet. Teslim süresi, fiyat avantajı ve sipariş başarısı gibi
+                                            kriterlerle performans analizi yapabilirsiniz.
                                         </p>
                                     </details>
 
                                     <details className="faq-item">
-                                        <summary>Sisteme her yerden erişebilir miyim?</summary>
+                                        <summary>Mal kabul işlemleri stoklara aktarılıyor mu?</summary>
 
                                         <p>
-                                            İnternet bağlantısı olan bilgisayar, tablet veya telefon üzerinden
-                                            güvenli şekilde erişebilirsiniz.
+                                            Gelen ürünler mal kabul işlemi tamamlandıktan sonra otomatik olarak stoklara işlenebilir.
                                         </p>
                                     </details>
 
                                     <details className="faq-item">
-                                        <summary>Sunucu yönetimi bana mı ait?</summary>
+                                        <summary>Satın alma raporları alınabiliyor mu?</summary>
 
                                         <p>
-                                            Hayır. Sunucu bakımı, güncellemeler ve performans takibi Klovo ekibi
-                                            tarafından yönetilir.
+                                            Klovo ERP, ürün, tedarikçi ve dönem bazlı detaylı
+                                            satın alma analizleri ve raporları sunmaktadır.
                                         </p>
                                     </details>
 

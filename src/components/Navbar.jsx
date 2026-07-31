@@ -4,7 +4,7 @@ import logo from '../assets/logo_yeni_1.png';
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import {
-   Wallet,
+  Wallet,
   Package,
   Users,
   Receipt,
@@ -67,110 +67,173 @@ export default function Navbar() {
 
             <div className="mega-menu">
 
-              <HashLink to="/" className="mega-item">
-                <div className="mega-icon">
-                  <Boxes size={16} />
-                </div>
-                <div>
-                  <h4>Klovo ERP</h4>
-                  <p>Tüm işletme süreçlerini yönetin</p>
-                </div>
-              </HashLink>
+              {/* 1. SÜTUN - ÜRÜNLER */}
+              <div className="mega-column">
+                <h3 className="mega-title">Ürünler</h3>
 
-              <HashLink to="/products/finans-yonetimi" className="mega-item">
-                <div className="mega-icon">
-                  <Wallet size={16} />
-                </div>
-                <div>
-                  <h4>Finans Yönetimi</h4>
-                  <p>Gelir-Gider takip,cari hesaplama yönetimi tek tıklamayala kontrolünüzde</p>
-                </div>
-              </HashLink>
+                <HashLink to="/" className="product-card">
+                  <div className="mega-icon">
+                    <Boxes size={22} />
+                  </div>
+                  <div>
+                    <h4>Klovo One ERP</h4>
+                    <p>Tüm işletme süreçlerini tek platformdan yönetin.</p>
+                  </div>
+                </HashLink>
 
-              <HashLink to="/products/e-donusum" className="mega-item">
-                <div className="mega-icon">
-                  <Archive size={16} />
-                </div>
-                <div>
-                  <h4>E-Dönüşüm</h4>
-                  <p>E-Fatura , E-Arşiv & E-İrsaliye</p>
-                </div>
-              </HashLink>
+                <HashLink to="/" className="product-card">
+                  <div className="mega-icon">
+                    <Store size={22} />
+                  </div>
+                  <div>
+                    <h4>Klovo One Mobil</h4>
+                    <p>Sahada çalışan ekipler için mobil ERP deneyimi.</p>
+                  </div>
+                </HashLink>
 
-              <HashLink to="/products/restoran-cafe" className="mega-item">
-                <div className="mega-icon">
-                  <UtensilsCrossed size={16} />
-                </div>
-                <div>
-                  <h4>Restoran ve Cafe Yönetimi</h4>
-                  <p>Restoran ve cafeler için özel çözümler.İşyeriniz için kolay ve kullanışlı iş süreçleri.</p>
-                </div>
-              </HashLink>
+                <HashLink to="/" className="product-card">
+                  <div className="mega-icon">
+                    <Users size={22} />
+                  </div>
+                  <div>
+                    <h4>Klovo One Mobil Patron</h4>
+                    <p>Yöneticiler için anlık rapor ve kontrol paneli.</p>
+                  </div>
+                </HashLink>
+              </div>
 
-              <HashLink to="/products/akaryakit" className="mega-item">
-                <div className="mega-icon">
-                  <Fuel size={16} />
-                </div>
-                <div>
-                  <h4>Akaryakıt yönetimi</h4>
-                  <p>Akaryakıt istasyonları için özel çözümler. Yakıt stok yönetimi ve satış süreçleri entegre.</p>
-                </div>
-              </HashLink>
+              {/* 2. SÜTUN - ANA MODÜLLER */}
+              <div className="mega-column">
+                <h3 className="mega-title">Ana Modüller</h3>
 
-              <HashLink to="/products/perakende" className="mega-item">
-                <div className="mega-icon">
-                  <ShoppingCart size={16} />
-                </div>
-                <div>
-                  <h4>Parakende Yönetimi</h4>
-                  <p>Parakende işletmeler için özel çözümler. Satış, stok ve müşteri yönetimi entegre.</p>
-                </div>
-              </HashLink>
+                <HashLink to="/products/depo-stok" className="mega-link">
+                  <Package size={18} />
+                  <span>Stok Yönetimi</span>
+                </HashLink>
 
-              <HashLink to="/products/depo-stok" className="mega-item">
-                <div className="mega-icon">
-                  <Package size={16} />
-                </div>
-                <div>
-                  <h4>Depo Stok Takipi</h4>
-                  <p>Stok durumunu ve hareketlerini takip edin.Ürün bazlı detaylı kritik takip.</p>
-                </div>
-              </HashLink>
-              <HashLink to="/products/api" className="mega-item">
-                <div className="mega-icon">
-                  <PlugZap size={16} />
-                </div>
-                <div>
-                  <h4>API Entegrasyonu</h4>
-                  <p>E-ticaret pazaryeri entegrasyonu.Üçüncü taraf sistemlerle kolay entegrasyon.</p>
-                </div>
-              </HashLink>
+                <HashLink to="/products/hizmet-yonetimi" className="mega-link">
+                  <Receipt size={18} />
+                  <span>Hizmet Yönetimi</span>
+                </HashLink>
 
-              <HashLink to="/products/cloud-altyapi" className="mega-item">
-                <div className="mega-icon">
-                  <Cloud size={16} />
-                </div>
-                <div>
-                  <h4>Cloud Altyazıpı Hizmetleri</h4>
-                  <p>Cloud tabanlı altyapı hizmetleri ile güvenli ve maliyetsiz çözüm sunar.</p>
-                </div>
-              </HashLink>
+                <HashLink to="/products/masraf-yonetimi" className="mega-link">
+                  <Receipt size={18} />
+                  <span>Masraf Yönetimi</span>
+                </HashLink>
+
+                <HashLink to="/products/personel-yonetimi" className="mega-link">
+                  <Users size={18} />
+                  <span>Personel Yönetimi</span>
+                </HashLink>
+
+                <HashLink to="/products/satis-ve-musteri" className="mega-link">
+                  <Users size={18} />
+                  Satış ve Müşteri Yönetimi
+                </HashLink>
+
+                <HashLink to="/products/satinalma-tedarikci" className="mega-link">
+                  <Truck size={18} />
+                  <span>Satın Alma & Tedarikçi</span>
+                </HashLink>
+
+                <HashLink to="/products/finans-yonetimi" className="mega-link">
+                  <Wallet size={18} />
+                  <span>Finans Yönetimi</span>
+                </HashLink>
+              </div>
+
+              {/* 3. SÜTUN - ALT MODÜLLER */}
+              <div className="mega-column">
+                <h3 className="mega-title">Alt Modüller</h3>
+
+                <div className="mega-groups-grid">
 
 
 
+                  <div className="mega-group">
+                    <HashLink to="/products/perakende" className="mega-group-title">
+                      <ShoppingCart size={18} />
+                      <span> Perakende Yönetimi</span>
+                    </HashLink>
 
-              <HashLink to="/products/e-tasarim" className="mega-item">
-                <div className="mega-icon">
-                  <Code2 size={16} />
+                    <span>Kasa Yönetimi</span>
+                    <span>POS Yönetimi</span>
+                    <span>Barkod Etiket Yönetimi</span>
+                    <span>Sayım İşleri</span>
+                    <span>Yazar Kasa Entegrasyonu</span>
+                  </div>
+
+                  <div className="mega-group">
+                    <HashLink to="/products/restoran-cafe" className="mega-group-title">
+                      <UtensilsCrossed size={18} />
+                      <span>Restoran Yönetimi</span>
+                    </HashLink>
+
+                    <span>Kasa Yönetimi</span>
+                    <span>Paket / Gel-Al / Masa Yönetimi</span>
+                    <span>Menü Yönetimi</span>
+                    <span>QR Menü</span>
+                    <span>Yazar Kasa Entegrasyonu</span>
+                  </div>
+
+                  <div className="mega-group">
+                    <HashLink to="/products/akaryakit" className="mega-group-title">
+
+                      <Fuel size={18} />
+                      <span>Akaryakıt Yönetimi</span>
+                    </HashLink>
+
+                    <span>Pompacı Hesabı</span>
+                    <span>Sayaç Satışları</span>
+                    <span>Tank Yönetimi</span>
+                    <span>Turpak / ASİS Entegrasyonu</span>
+                    <span>Saha Satış Yönetimi</span>
+                  </div>
+
+                  <div className="mega-group">
+                    <HashLink to="/products/e-donusum" className="mega-group-title">
+                      <Archive size={18} />
+                      E-Dönüşüm
+                    </HashLink>
+
+                    <span>E-Fatura / </span>
+                    <span>E-Arşiv</span>
+                  </div>
+
                 </div>
-                <div>
-                  <h4>E-Tasarım ve Geliştirme</h4>
-                  <p> QR kod tabanlı çözümler.Barkod tasarımı. E-ticaret ve hizmetler için özel geliştirme.</p>
+              </div>
+
+              {/* 4. SÜTUN - GELECEK */}
+              <div className="mega-column">
+                <h3 className="mega-title">Gelecek Modüller</h3>
+
+                <div className="coming-item">
+                  <span>Banka Entegrasyonu</span>
+                  <small>Yakında</small>
                 </div>
-              </HashLink>
 
+                <div className="coming-item">
+                  <span>Üretim Yönetimi</span>
+                  <small>Yakında</small>
+                </div>
 
-            </div> {/* mega-menu */}
+                <div className="coming-item">
+                  <span>Perakende Kampanya Yönetimi</span>
+                  <small>Yakında</small>
+                </div>
+
+                <div className="coming-item">
+                  <span>E-İrsaliye</span>
+                  <small>Yakında</small>
+                </div>
+
+                <div className="coming-item">
+                  <span>Restoran Portal Entegrasyonları</span>
+                  <small>Yakında</small>
+                </div>
+              </div>
+
+            </div>
 
           </div> {/* nav-dropdown */}
           <HashLink to="/#simulator" className="nav-link">

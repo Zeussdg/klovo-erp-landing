@@ -11,6 +11,11 @@ import {
 } from "lucide-react";
 import ProductContactForm from "../../components/ProductContactForm";
 
+import ImagePreview from "../../style/ImagePreview";
+import Main from "./images/akaryakit/hesap_cetvel.png";
+import Main1 from "./images/akaryakit/kolaj.png";
+import Main2 from "./images/akaryakit/görsel3.png";
+
 export default function AkaryakitPage() {
     return (
         <>
@@ -29,7 +34,7 @@ export default function AkaryakitPage() {
 
                                 <div className="hero-content">
 
-                                
+
 
                                     <h1>
                                         Akaryakıt
@@ -57,17 +62,7 @@ export default function AkaryakitPage() {
 
                                     </ul>
 
-                                    <div className="hero-buttons">
 
-                                        <button className="btn btn-primary">
-                                            Demo Talep Et
-                                        </button>
-
-                                        <button className="btn btn-secondary">
-                                            Teklif Al
-                                        </button>
-
-                                    </div>
 
                                 </div>
 
@@ -81,7 +76,7 @@ export default function AkaryakitPage() {
 
                                 <div className="section-header">
 
-                                   
+
                                     <h2>Neden Klovo Akaryakıt Yönetimi?</h2>
 
                                     <p>
@@ -191,7 +186,10 @@ export default function AkaryakitPage() {
                                 <div className="feature-showcase">
                                     {/* 1. görsel */}
                                     <div className="showcase-image">
-                                        <span>Pompa Satış Ekranı</span>
+                                        <ImagePreview
+                                            src={Main}
+                                            alt="2"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -245,7 +243,10 @@ export default function AkaryakitPage() {
                                     </div>
                                     {/* 2. görsel */}
                                     <div className="showcase-image">
-                                        <span>Tank Yönetim Paneli</span>
+                                        <ImagePreview
+                                            src={Main1}
+                                            alt="2"
+                                        />
                                     </div>
                                 </div>
 
@@ -255,7 +256,10 @@ export default function AkaryakitPage() {
                                 <div className="feature-showcase">
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
-                                        <span>Satış ve Finans Raporları</span>
+                                        <ImagePreview
+                                            src={Main2}
+                                            alt="2"
+                                        />
                                     </div>
 
                                     <div className="showcase-content">
@@ -293,7 +297,7 @@ export default function AkaryakitPage() {
 
                                         <div className="section-header">
 
-                                            
+
 
                                             <h2>Akaryakıt Operasyonlarınızı Veriye Dönüştürün</h2>
 
@@ -351,7 +355,7 @@ export default function AkaryakitPage() {
 
                                 <div className="section-header">
 
-                                   
+
 
                                     <h2>Akaryakıt Yönetimi Hakkında</h2>
 
@@ -378,7 +382,7 @@ export default function AkaryakitPage() {
                                         <summary>Tank seviyelerini anlık takip edebilir miyim?</summary>
 
                                         <p>
-                                           Evet. Tank doluluk oranlarını ve yakıt stoklarını gerçek zamanlı olarak izleyebilir, kritik seviyeler için otomatik uyarılar alabilirsiniz.
+                                            Evet. Tank doluluk oranlarını ve yakıt stoklarını gerçek zamanlı olarak izleyebilir, kritik seviyeler için otomatik uyarılar alabilirsiniz.
                                         </p>
                                     </details>
 

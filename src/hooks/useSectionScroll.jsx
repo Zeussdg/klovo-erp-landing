@@ -72,7 +72,7 @@ export default function useSectionScroll(sectionIds) {
       e.preventDefault();
       isAnimating.current = true;
 
-      let blockAlign = "start";
+      let blockAlign = "center";
 
       // Features -> Simulator geçişinde Simulator'ün en altına kaydır
       if (currentId === "features" && direction === -1) {

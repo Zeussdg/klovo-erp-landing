@@ -200,7 +200,7 @@
 .section-header h2 {
     font-size: clamp(2rem,4vw,3rem);
     margin-bottom:18px;
-    font-weight: 800;
+    font-weight: 550;
     letter-spacing: -0.03em;
     background: linear-gradient(
         90deg,
@@ -372,8 +372,10 @@
     padding:40px 20px;
     text-align:center;
     transition:.3s;
-}
 
+     width:100%;
+    box-sizing:border-box;
+}
 .stat-card:hover{
     transform:translateY(-8px);
     border-color:var(--primary-color);

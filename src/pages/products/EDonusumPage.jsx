@@ -33,16 +33,16 @@ export default function EDonusumPage() {
 
                                 <div className="hero-content">
 
-                                  
+
 
                                     <h1>
-                                        E-Dönüşüm &
-                                        E-Fatura &
-                                        E-Arşiv
-                                        <br />
+                                        E-Dönüşüm </h1>
+                                    <h2> E-Fatura &
+                                        E-Arşiv</h2>
+                                    <h2>
                                         Süreçlerinizi
-                                        Kolaylaştırın
-                                    </h1>
+                                        Kolaylaştırın</h2>
+
 
                                     <p>
                                         Klovo E-Dönüşüm çözümleri ile e-Fatura,
@@ -57,23 +57,13 @@ export default function EDonusumPage() {
 
                                         <li>✔ E-Arşiv</li>
 
-                                        <li>✔ E-İrsaliye</li>
+                                        <li>? E-İrsaliye</li>
 
-                                        
+
 
                                     </ul>
 
-                                    <div className="hero-buttons">
 
-                                        <button className="btn btn-primary">
-                                            Demo Talep Et
-                                        </button>
-
-                                        <button className="btn btn-secondary">
-                                            Teklif Al
-                                        </button>
-
-                                    </div>
 
                                 </div>
 
@@ -87,7 +77,7 @@ export default function EDonusumPage() {
 
                                 <div className="section-header">
 
-                                   
+
                                     <h2>Neden Klovo E-Dönüşüm?</h2>
                                     <p>
                                         Elektronik belge süreçlerinizi hızlandırın,
@@ -130,13 +120,13 @@ export default function EDonusumPage() {
                                             <ShieldCheck size={24} />
                                         </div>
 
-                                        
+
 
                                         <h3> Hızlı İşlem</h3>
                                         <p>Manuel evrak süreçlerini ortadan kaldırarak zamandan tasarruf edin.</p>
                                     </div>
 
-                                
+
 
                                 </div>
 
@@ -151,7 +141,7 @@ export default function EDonusumPage() {
 
                                 <div className="section-header">
 
-                                  
+
 
                                     <h2>E-Dönüşüm Süreçlerini Yakından İnceleyin</h2>
 
@@ -236,10 +226,10 @@ export default function EDonusumPage() {
                                     {/* 3. görsel */}
                                     <div className="showcase-image">
                                         <ImagePreview
-                                            //src={Cari}
-                                            //alt="finance2"
+                                        //src={Cari}
+                                        //alt="finance2"
                                         />
-                                        <span>E-irsaliye bekleniyor</span>
+                                        <span>E-irsaliye Yakında Geliyor !</span>
                                     </div>
 
                                     <div className="showcase-content">
@@ -258,7 +248,7 @@ export default function EDonusumPage() {
 
                                         <ul>
 
-                                            
+
 
                                             <li>✔ E-İrsaliye desteği</li>
 
@@ -281,7 +271,7 @@ export default function EDonusumPage() {
 
                                         <div className="section-header">
 
-                                          
+
 
                                             <h2>Dijital Belge Süreçlerinde Hız ve Güven</h2>
 
@@ -334,7 +324,7 @@ export default function EDonusumPage() {
 
                                 <div className="section-header">
 
-                                   
+
 
                                     <h2>E-Dönüşüm Hakkında</h2>
 

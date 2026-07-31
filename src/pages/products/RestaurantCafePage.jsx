@@ -60,17 +60,7 @@ export default function RestaurantCafePage() {
 
                                     </ul>
 
-                                    <div className="hero-buttons">
-
-                                        <button className="btn btn-primary">
-                                            Demo Talep Et
-                                        </button>
-
-                                        <button className="btn btn-secondary">
-                                            Teklif Al
-                                        </button>
-
-                                    </div>
+                                  
 
                                 </div>
 

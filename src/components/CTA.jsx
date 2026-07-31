@@ -77,6 +77,7 @@ export default function CTA() {
         sector,
 
         companySize,
+        
 
 
 
@@ -161,33 +162,35 @@ export default function CTA() {
 
           <div className="cta-select-grid">
 
-            <div className="field">
+           <div className="field">
 
-              <label>Sektör</label>
+  <label htmlFor="sector-select">Sektör</label>
 
-              <Select
-                options={sectorOptions}
-                value={sectorOptions.find((option) => option.value === sector)}
-                onChange={(selected) => setSector(selected.value)}
-                placeholder="Sektör Seçiniz"
-                isSearchable={false}
-              />
+  <Select
+    inputId="sector-select"
+    options={sectorOptions}
+    value={sectorOptions.find((option) => option.value === sector)}
+    onChange={(selected) => setSector(selected.value)}
+    placeholder="Sektör Seçiniz"
+    isSearchable={false}
+  />
 
-            </div>
+</div>
 
-            <div className="field">
+<div className="field">
 
-              <label>Şirket Büyüklüğü</label>
+  <label htmlFor="company-select">Şirket Büyüklüğü</label>
 
-              <Select
-                options={companyOptions}
-                value={companyOptions.find((option) => option.value === companySize)}
-                onChange={(selected) => setCompanySize(selected.value)}
-                placeholder="Şirket Büyüklüğü"
-                isSearchable={false}
-              />
+  <Select
+    inputId="company-select"
+    options={companyOptions}
+    value={companyOptions.find((option) => option.value === companySize)}
+    onChange={(selected) => setCompanySize(selected.value)}
+    placeholder="Şirket Büyüklüğü"
+    isSearchable={false}
+  />
 
-            </div>
+</div>
 
 
 

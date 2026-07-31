@@ -3,23 +3,57 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Features from './components/Features';
-import Hero3D from "./3DMockup/Hero3D";
+
 
 //import ErpSimulator from './components/ErpSimulator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ThemeToggle from './components/ThemeToggle';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DemoForm from './pages/DemoForm'; // veya ./pages/DemoForm
-import DepotStockPage from "./pages/products/DepotStockPage";
-import ApiIntegrationPage from "./pages/products/ApiIntegrationPage";
-import CloudPage from "./pages/products/CloudPage";
-import EDonusumPage from "./pages/products/EDonusumPage";
-import FinancePage from "./pages/products/FinancePage";
-import RestaurantCafePage from "./pages/products/RestaurantCafePage";
-import ETasarimPage from "./pages/products/ETasarimPage";
-import PerakendePage from "./pages/products/PerakendePage";
-import AkaryakitPage from "./pages/products/AkaryakitPage";
+const DepotStockPage = lazy(() =>
+  import("./pages/products/DepotStockPage")
+);
+
+const SatisAndMusteriPage = lazy(() =>
+  import("./pages/products/SatisAndMusteriPage")
+);
+
+const SatinalmaTedarikciPage = lazy(() =>
+  import("./pages/products/SatinalmaAndTedarikciPage")
+);
+
+const EDonusumPage = lazy(() =>
+  import("./pages/products/EDonusumPage")
+);
+
+const FinancePage = lazy(() =>
+  import("./pages/products/FinancePage")
+);
+
+const RestaurantCafePage = lazy(() =>
+  import("./pages/products/RestaurantCafePage")
+);
+
+const HizmetYonetimiPage = lazy(() =>
+  import("./pages/products/HizmetYonetimiPage")
+);
+
+const PerakendePage = lazy(() =>
+  import("./pages/products/PerakendePage")
+);
+
+const AkaryakitPage = lazy(() =>
+  import("./pages/products/AkaryakitPage")
+);
+
+const MasrafYonetimiPage = lazy(() =>
+  import("./pages/products/MasrafYonetimiPage")
+);
+
+const PersonelYonetimiPage = lazy(() =>
+  import("./pages/products/PersonelYonetimiPage")
+);
 import ScrollToTop from "./components/ScrollToTop";
 import FloatingSocials from "./components/FloatingSocials";
 import CTA from "./components/CTA";
@@ -60,7 +94,7 @@ function Home() {
     );
   }
 
-useSectionScroll([
+  useSectionScroll([
     "home",
     "about",
     "simulator",
@@ -68,58 +102,61 @@ useSectionScroll([
     "cta",
     "contact",
     "footer"
-]);
+  ]);
 
   return (
     <>
       <Navbar />
-      <Hero />
-      <AboutUs />
 
-      <section className="simulator-section section-padding" id="simulator"data-snap="false">
-        <div className="container">
-          <div className="section-header">
+      <main>
+        <Hero />
+        <AboutUs />
 
-            
-            
-            <h2>Klovo ERP'yi Hemen Deneyin</h2>
-            <p>
-              Sistemi satın almadan önce bulut panelimizi aşağıda canlı olarak
-              deneyimleyebilirsiniz.
-            </p>
+        <section className="simulator-section section-padding" id="simulator" data-snap="false">
+          <div className="container">
+            <div className="section-header">
+
+
+
+              <h2>Klovo ERP'yi Hemen Deneyin</h2>
+              <p>
+                Sistemi satın almadan önce bulut panelimizi aşağıda canlı olarak
+                deneyimleyebilirsiniz.
+              </p>
+            </div>
+
+            <div className="demo-device-switcher" >
+              <button
+                className={activeDevice === 'phone' ? 'active' : ''}
+                onClick={() => setActiveDevice('phone')}
+              >
+                Telefon
+              </button>
+
+              <button
+                className={activeDevice === 'tablet' ? 'active' : ''}
+                onClick={() => setActiveDevice('tablet')}
+              >
+                Tablet
+              </button>
+            </div>
+
+            <Suspense fallback={<div className="demo-loading">Demo yükleniyor…</div>}>
+              {activeDevice === 'phone' ? (
+                <PhoneDemo isStandaloneMode={false} />
+              ) : (
+                <TabletDemo isStandaloneMode={false} />
+              )}
+            </Suspense>
+            {/* <ErpSimulator isStandaloneMode={false} /> */}
           </div>
+        </section>
 
-          <div className="demo-device-switcher" >
-            <button
-              className={activeDevice === 'phone' ? 'active' : ''}
-              onClick={() => setActiveDevice('phone')}
-            >
-              Telefon
-            </button>
-
-            <button
-              className={activeDevice === 'tablet' ? 'active' : ''}
-              onClick={() => setActiveDevice('tablet')}
-            >
-              Tablet
-            </button>
-          </div>
-
-          <Suspense fallback={<div className="demo-loading">Demo yükleniyor…</div>}>
-            {activeDevice === 'phone' ? (
-              <PhoneDemo isStandaloneMode={false} />
-            ) : (
-              <TabletDemo isStandaloneMode={false} />
-            )}
-          </Suspense>
-          {/* <ErpSimulator isStandaloneMode={false} /> */}
-        </div>
-      </section>
-      
-      <Features />
-       <CTA />
-      <Contact />
-      <Footer />
+        <Features />
+        <CTA />
+        <Contact />
+        <Footer />
+      </main>
     </>
   );
 
@@ -136,12 +173,25 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/demo-talep" element={<DemoForm />} />
         <Route path="/products/depo-stok" element={<DepotStockPage />} />
-        <Route path="/products/api" element={<ApiIntegrationPage />} />
-        <Route path="/products/cloud-altyapi" element={<CloudPage />} />
+        <Route
+          path="/products/satis-ve-musteri"
+          element={<SatisAndMusteriPage />}
+        />
+        <Route
+          path="/products/satinalma-tedarikci"
+          element={<SatinalmaTedarikciPage />}
+        />
+        <Route
+          path="/products/masraf-yonetimi"
+          element={<MasrafYonetimiPage />}
+        />
         <Route path="/products/e-donusum" element={<EDonusumPage />} />
         <Route path="/products/finans-yonetimi" element={<FinancePage />} />
         <Route path="/products/restoran-cafe" element={<RestaurantCafePage />} />
-        <Route path="/products/e-tasarim" element={<ETasarimPage />} />
+        <Route
+          path="/products/hizmet-yonetimi"
+          element={<HizmetYonetimiPage />}
+        />
         <Route
           path="/products/perakende"
           element={<PerakendePage />}
@@ -149,6 +199,10 @@ function App() {
         <Route
           path="/products/akaryakit"
           element={<AkaryakitPage />}
+        />
+        <Route
+          path="/products/personel-yonetimi"
+          element={<PersonelYonetimiPage />}
         />
       </Routes>
     </BrowserRouter>

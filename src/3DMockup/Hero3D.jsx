@@ -31,30 +31,12 @@ function Laptop() {
 
     scene.traverse((child) => {
 
-
       if (child.isMesh) {
-
-
-        console.log(child.name);
-
-
 
         if (child.name === "Cube016_screen_0") {
 
 
           const material = child.material.clone();
-
-
-
-          // eski ekran görselini temizle
-          material.map = null;
-          material.emissiveMap = null;
-          material.normalMap = null;
-          material.roughnessMap = null;
-          material.metalnessMap = null;
-
-
-
           // yeni ekran görseli
           material.map = texture;
 
@@ -108,6 +90,9 @@ export default function Hero3D() {
 
 
       <Canvas
+
+        frameloop="demand"
+        dpr={[1, 1.5]}
 
         camera={{
           position: [0, 2.2, 5],

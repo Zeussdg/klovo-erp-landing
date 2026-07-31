@@ -1,17 +1,20 @@
 import React from 'react';
 import { Shield, Zap, Cloud, ArrowRight } from 'lucide-react';
 import '../index.css'
-import Hero3D from "/src/3DMockup/Hero3D";
+
+import { lazy, Suspense } from "react";
+
+const Hero3D = lazy(() => import("/src/3DMockup/Hero3D"));
 
 export default function Hero() {
   return (
     <section className="hero-section" id="home" data-snap="true">
       <div className="glow-bg glow-blue"></div>
       <div className="glow-bg glow-purple"></div>
-      
+
       <div className="container hero-container grid-2">
-         <div className="hero-content">
-         
+        <div className="hero-content">
+
           <h1>
             İşletmenizi Bulutun Gücüyle <span className="text-gradient">Yönetin</span>
           </h1>
@@ -19,12 +22,12 @@ export default function Hero() {
             Klovo ERP ile finans, stok, satış, operasyon ve e-fatura süreçlerinizi tek bir merkezden takip edin. Hızlı kurulumu, modern arayüzü ve güçlü entegrasyon kabiliyetiyle işinizi geleceğe taşıyın.
           </p>
           <div className="hero-actions">
-            
+
             <a href="#contact" className="btn btn-secondary">
               İletişime Geç
             </a>
           </div>
-          
+
           <div className="hero-stats">
             <div className="hero-stat-item">
               <Zap size={18} className="stat-icon-blue" />
@@ -35,9 +38,9 @@ export default function Hero() {
               <span>SSL ve Güvenli Yedekleme</span>
             </div>
           </div>
-        </div> 
-        
-        
+        </div>
+
+
         {/* Right side: Modern Animated Tech Graphic (Dashboard Mockup in CSS) */}
         <div className="hero-graphic-container animate-float">
           {/* <div className="hero-graphic-card glass-card">
@@ -64,26 +67,34 @@ export default function Hero() {
               
               <div className="graphic-flex-row">
                 {/* User info */}
-               {/* <div className="graphic-card-mini">
+          {/* <div className="graphic-card-mini">
                   <div className="mini-label">Kullanıcılar</div>
                   <div className="mini-val">+42 Aktif</div>
                 </div>
                 {/* Cloud sync */}
-               {/* <div className="graphic-card-mini highlight">
+          {/* <div className="graphic-card-mini highlight">
                   <div className="mini-label">Yedekleme</div>
                   <div className="mini-val">Tamamlandı</div>
                 </div>
               </div>
 
               {/* Console log simulation */}
-              {/*<div className="graphic-console">
+          {/*<div className="graphic-console">
                 <code>$ klovo-erp --sync</code>
                 <code className="text-success">&gt; Veriler şifrelendi ve buluta aktarıldı.</code>
                 <code className="text-success">&gt; API entegrasyonu aktif (200 OK)</code>
               </div>
             </div>
           </div> */}
-          <Hero3D/>
+          <Suspense
+            fallback={
+              <div
+                className="hero-3d-card"
+              />
+            }
+          >
+            <Hero3D />
+          </Suspense>
 
         </div>
       </div>

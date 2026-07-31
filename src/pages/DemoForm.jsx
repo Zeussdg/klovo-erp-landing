@@ -23,7 +23,10 @@ ${modules.join(", ")} Ürünleriniz hakkında detaylı bilgi almak istiyorum.
 
 İşletmem için uygun çözüm hakkında benimle iletişime geçebilir misiniz?
 
+Şirket Büyüklüğü: ${companySize}
+
 Teşekkürler.`;
+
 
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
