@@ -13,9 +13,9 @@ export default function Footer() {
           <div className="footer-brand">
             <HashLink smooth to="/" className="footer-logo">
               <img src={logo} alt="Klovo ERP Logo" className="logo-img" />
-             {/* <span className="logo-text">KLOVO<span className="logo-subtext">ERP</span></span>*/}
+            
             </HashLink>
-            <p>Bulut tabanlı yapısı ile finans, stok, satış, operasyon ve e-fatura süreçlerinizi tek platformdan yönetin.</p>
+            <p >Bulut tabanlı yapısı ile finans, stok, satış, operasyon ve e-fatura süreçlerinizi tek platformdan yönetin.</p>
             <div className="store-buttons">
               <a
                 href="https://apps.apple.com/tr/app/klovo-one-erp/id6770559208"

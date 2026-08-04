@@ -4,7 +4,7 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Features from './components/Features';
 
-
+import Download from "./pages/Download";
 //import ErpSimulator from './components/ErpSimulator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -112,45 +112,64 @@ function Home() {
         <Hero />
         <AboutUs />
 
-        <section className="simulator-section section-padding" id="simulator" data-snap="false">
-          <div className="container">
-            <div className="section-header">
+        <section
+  className="simulator-section section-padding"
+  id="simulator"
+  data-snap="false"
+>
+  <div className="container">
+    <div className="section-header">
+      <h2>Klovo ERP'yi Hemen Deneyin</h2>
+      <p>
+        Sistemi satın almadan önce bulut panelimizi aşağıda canlı olarak
+        deneyimleyebilirsiniz.
+      </p>
+    </div>
 
+    <div className="demo-device-switcher">
+      <button
+        className={activeDevice === "phone" ? "active" : ""}
+        onClick={() => setActiveDevice("phone")}
+      >
+        Telefon
+      </button>
 
+      <button
+        className={activeDevice === "tablet" ? "active" : ""}
+        onClick={() => setActiveDevice("tablet")}
+      >
+        Tablet
+      </button>
+    </div>
 
-              <h2>Klovo ERP'yi Hemen Deneyin</h2>
-              <p>
-                Sistemi satın almadan önce bulut panelimizi aşağıda canlı olarak
-                deneyimleyebilirsiniz.
-              </p>
-            </div>
+    <div className="demo-wrapper">
+      <div className="demo-preview">
+        <Suspense fallback={<div className="demo-loading">Demo yükleniyor…</div>}>
+          {activeDevice === "phone" ? (
+            <PhoneDemo isStandaloneMode={false} />
+          ) : (
+            <TabletDemo isStandaloneMode={false} />
+          )}
+        </Suspense>
+      </div>
 
-            <div className="demo-device-switcher" >
-              <button
-                className={activeDevice === 'phone' ? 'active' : ''}
-                onClick={() => setActiveDevice('phone')}
-              >
-                Telefon
-              </button>
+      <div className="download-card">
+        <img
+          src="/qr-code.svg"
+          alt="Klovo ERP Mobil Uygulama QR Kodu"
+          className="download-qr"
+        />
 
-              <button
-                className={activeDevice === 'tablet' ? 'active' : ''}
-                onClick={() => setActiveDevice('tablet')}
-              >
-                Tablet
-              </button>
-            </div>
+        <h3>Mobil Uygulamayı İndirin</h3>
 
-            <Suspense fallback={<div className="demo-loading">Demo yükleniyor…</div>}>
-              {activeDevice === 'phone' ? (
-                <PhoneDemo isStandaloneMode={false} />
-              ) : (
-                <TabletDemo isStandaloneMode={false} />
-              )}
-            </Suspense>
-            {/* <ErpSimulator isStandaloneMode={false} /> */}
-          </div>
-        </section>
+        <p>
+          Telefonunuzla QR kodu tarayın. Cihazınıza uygun uygulama mağazasına
+          otomatik olarak yönlendirilirsiniz.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
         <Features />
         <CTA />
@@ -181,6 +200,7 @@ function App() {
           path="/products/satinalma-tedarikci"
           element={<SatinalmaTedarikciPage />}
         />
+        <Route path="/download" element={<Download />} />
         <Route
           path="/products/masraf-yonetimi"
           element={<MasrafYonetimiPage />}

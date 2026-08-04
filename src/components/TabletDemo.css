@@ -22,7 +22,7 @@
 
 .tablet-demo * { box-sizing: border-box; }
 
-/* TABLET FRAME — landscape, her zaman sabit boyut/konum */
+/* TABLET FRAME — landscape */
 .tablet-demo .tablet {
   width: min(1140px, 94vw);
   aspect-ratio: 16 / 10;
@@ -32,13 +32,6 @@
   box-shadow: 0 60px 100px -30px rgba(0, 0, 0, 0.75), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
   position: relative;
   font-family: var(--font-body);
-}
-@media (max-width: 700px) {
-  .tablet-demo .tablet {
-    border-radius: 24px;
-    padding: 10px;
-    aspect-ratio: 4 / 3;
-  }
 }
 
 .tablet-demo .screen {
@@ -63,7 +56,7 @@
   z-index: 80;
 }
 
-/* SIDEBAR — kalıcı yatay nav, daraltılabilir */
+/* SIDEBAR — yatay nav */
 .tablet-demo .sidebar {
   width: 288px;
   flex-shrink: 0;
@@ -135,7 +128,15 @@
 }
 .tablet-demo .sidebar-search input::placeholder { color: var(--muted); }
 
-.tablet-demo .sidebar-scroll { flex: 1; overflow-y: auto; padding: 6px 14px 20px; scrollbar-width: none; }
+/* SIDEBAR SCROLL (GÜNCELLENDİ: DOKUNMATİK KAYDIRMA EKLENDİ) */
+.tablet-demo .sidebar-scroll { 
+  flex: 1; 
+  overflow-y: auto !important; 
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  padding: 6px 14px 20px; 
+  scrollbar-width: none; 
+}
 .tablet-demo .sidebar-scroll::-webkit-scrollbar { display: none; }
 
 .tablet-demo .sidebar-label { font-size: 11px; font-weight: 700; color: var(--muted); letter-spacing: 0.5px; margin: 14px 6px 8px; }
@@ -186,10 +187,12 @@
 .tablet-demo .header-day { font-size: 12.5px; font-weight: 600; color: var(--muted); }
 .tablet-demo .header-date { font-size: 13.5px; font-weight: 700; color: var(--text); margin-top: 2px; }
 
-/* CONTENT — landscape kart grid'i */
+/* CONTENT (GÜNCELLENDİ: SCROLL VE DOKUNMATİK KAYDIRMA DÜZELTİLDİ) */
 .tablet-demo .content {
   flex: 1;
-  overflow-y: auto;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
   padding: 22px 32px 32px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -236,7 +239,7 @@
 }
 .tablet-demo .toast.show { opacity: 1; }
 
-/* POWER SCREEN — tablet üzerinde sabit bekleme ekranı */
+/* POWER SCREEN */
 .tablet-demo .power-screen {
   position: absolute; inset: 0; z-index: 100;
   background: linear-gradient(145deg, #ff6a00, #d94f00);
@@ -259,7 +262,7 @@
 .tablet-demo .power-text { color: #fff; font-family: var(--font-body); font-weight: 600; font-size: 15px; max-width: 300px; }
 .tablet-demo .power-sub { color: #7c869c; font-family: var(--font-body); font-size: 12px; max-width: 280px; }
 
-/* ================= MODAL — power'a basınca tüm ekranın üstünde açılır ================= */
+/* ================= MODAL (GÜNCELLENDİ) ================= */
 
 .tablet-demo .modal-backdrop {
   position: fixed;
@@ -273,6 +276,7 @@
   justify-content: center;
   padding: 30px;
   animation: backdrop-fade .3s ease both;
+  touch-action: none; /* Arkadaki sayfanın kaymasını engeller */
 }
 @keyframes backdrop-fade {
   0% { opacity: 0; }
@@ -323,24 +327,105 @@
 .tablet-demo .modal-close:hover { background: rgba(20, 24, 40, 0.16); }
 .tablet-demo .modal-close:active { transform: scale(0.94); }
 
-@media (max-width: 700px) {
-  .tablet-demo .sidebar { width: 78px; }
-  .tablet-demo .sidebar.open { width: 78px; }
-  .tablet-demo .sidebar-title,
-  .tablet-demo .sidebar-profile,
-  .tablet-demo .sidebar-search,
-  .tablet-demo .sidebar-label,
-  .tablet-demo .sidebar-item-name,
-  .tablet-demo .sidebar-chevron,
-  .tablet-demo .sidebar-children { display: none; }
-  .tablet-demo .content { grid-template-columns: 1fr 1fr; }
-  .tablet-demo .card.wide { grid-column: span 2; }
+@media (max-width: 768px) {
 
-  .tablet-demo .modal-backdrop { padding: 0; }
+  .tablet-demo {
+    padding: 16px;
+  }
+
+  .tablet-demo .tablet {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 8px;
+    border-radius: 22px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .tablet-demo .sidebar {
+    width: 0px;
+    overflow:hidden;
+  }
+  .tablet-demo .sidebar.open{
+    width:260px;
+  }
+  .tablet-demo .sidebar.collapsed {
+    width: 70px;
+  }
+  .tablet-demo .main{
+    width:100%;
+  }
+
+  .tablet-demo .sidebar.collapsed .sidebar-title,
+  .tablet-demo .sidebar.collapsed .sidebar-profile,
+  .tablet-demo .sidebar.collapsed .sidebar-search,
+  .tablet-demo .sidebar.collapsed .sidebar-label,
+  .tablet-demo .sidebar.collapsed .sidebar-item-name,
+  .tablet-demo .sidebar.collapsed .sidebar-chevron,
+  .tablet-demo .sidebar.collapsed .sidebar-children {
+    display: none;
+  }
+
+  .tablet-demo .content {
+    padding: 14px;
+    gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  .tablet-demo .card,
+  .tablet-demo .card.wide {
+    grid-column: span 1;
+    padding: 14px;
+  }
+
+  .tablet-demo .card-title {
+    font-size: 13px;
+  }
+
+  .tablet-demo .card-value {
+    font-size: 18px;
+  }
+
+  .tablet-demo .power-btn {
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+  }
+
+  .tablet-demo .power-text {
+    font-size: 12px;
+    max-width: 220px;
+  }
+
+  .tablet-demo .power-sub {
+    font-size: 10px;
+    max-width: 200px;
+  }
+
+  .tablet-demo .modal-backdrop {
+    padding: 0;
+  }
+
   .tablet-demo .app-modal {
     width: 100vw;
     height: 100vh;
-    aspect-ratio: unset;
     border-radius: 0;
+    aspect-ratio: auto;
   }
+  .tablet-demo .topbar{
+    padding:14px 18px;
+  }
+
+  .tablet-demo .app-title{
+    font-size:18px;
+  }
+}
+
+/* ===========================
+   ARKA SAYFA KAYMA KİLİDİ (SCROLL LOCK)
+=========================== */
+body.modal-open {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
 }

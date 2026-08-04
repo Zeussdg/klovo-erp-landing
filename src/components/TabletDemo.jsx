@@ -18,6 +18,8 @@ const ANA_MODULLER = [
 
 const DIGER_MODULLER = [
   { name: 'PERAKENDE YÖNETİMİ', icon: '🛒', children: ['POS Ayarları', 'Kasa Yönetimi', 'Fiyat Etiketleri'] },
+  { name: 'RESTORAN YÖNETİMİ', icon: '🍽️', children: ['Masa Yönetimi', 'Sipariş Yönetimi', 'Menü Yönetimi'] },
+  { name: 'AKARYAKIT YÖNETİMİ', icon: '⛽', children: ['Parametreler', 'Ada Kartları', 'Sayaç Kartları'] },
 ];
 
 export default function TabletDemo() {
@@ -43,8 +45,7 @@ export default function TabletDemo() {
     return () => clearInterval(id);
   }, [powered]);
 
-  // Batarya sayacı: açılışta 100'den başlar, saniyede %1 azalır,
-  // 0'a ulaşınca modal otomatik olarak kapanır.
+  // Batarya sayacı
   useEffect(() => {
     if (!powered) return;
     const id = setInterval(() => {
@@ -57,6 +58,19 @@ export default function TabletDemo() {
       });
     }, 1000);
     return () => clearInterval(id);
+  }, [powered]);
+
+  // SCROLL KİLİTLENME MANTIĞI: Sadece 'powered' state'i değiştiğinde çalışır
+  useEffect(() => {
+    if (powered) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
   }, [powered]);
 
   const handlePowerOn = () => {
@@ -88,7 +102,6 @@ export default function TabletDemo() {
   };
 
   const toggleGroup = (name) => {
-    // Sidebar daralmışken bir gruba tıklanırsa önce genişlet
     setSidebarOpen(true);
     setOpenGroups((prev) => ({ ...prev, [name]: !prev[name] }));
   };
@@ -144,7 +157,7 @@ export default function TabletDemo() {
         </div>
       </div>
 
-      {/* MODAL — power tuşuna basınca tüm ekranın üstünde açılır, arka plan blur olur */}
+      {/* MODAL — power tuşuna basınca tüm ekranın üstünde açılır */}
       {powered && (
         <div className="modal-backdrop">
           <div className="app-modal">

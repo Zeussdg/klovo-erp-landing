@@ -11,7 +11,7 @@ export default function AboutUs() {
 
           <div className="about-image">
             <img
-              src="/main-page-afis.png"
+              src="/main-page-afis.webp"
               alt="Klovo ERP Dashboard"
             />
           </div>

@@ -3,27 +3,16 @@ import './PhoneDemo.css';
 import StockInquiry from './modules/StockInquiry';
 import BarcodeCards from './modules/BarcodeCards';
 
-
-
 const menuGroups = [
   ['💳', 'GENEL KARTLAR', ['Stok Sorgula', 'Stok Kartı', 'Barkod Kartları', 'Hizmet Kartı', 'Masraf Kartı', 'Cari Kartı', 'Personel Kartı']],
-
   ['💼', 'FİNANSAL KARTLAR', ['Kasa Kartı', 'Kredi Kartı Kartı', 'Pos Kartı', 'Banka Hesap Kartı']],
-
   ['📄', 'GENEL EVRAKLAR', ['Alış Proforması', 'Satış Proforması', 'Alış Siparişi', 'Satış Siparişi', 'Alış Teklifi', 'Satış Teklifi', 'Alış İrsaliyesi', 'Satış İrsaliyesi', 'Alış Faturası', 'Satış Faturası']],
-
   ['🧾', 'FİNANSAL FİŞLER', ['Fiyat Değişikliği Fişi']],
-
   ['📑', 'FİNANSAL EVRAKLAR', ['Tahsilat', 'Tediye', 'Çek Girişi', 'Çek Çıkışı', 'Senet Girişi', 'Senet Çıkışı', 'Borç Dekont', 'Alacak Dekont', 'Gelen Havale', 'Giden Havale']],
-
   ['🔁', 'HAREKETLER', ['Cari Hareketler']],
-
   ['🗂️', 'GRUPLAR', ['Cari Ana Grup', 'Masraf Grup', 'Stok Ana Grup', 'Stok Alt Grup', 'Stok Kategori', 'Hizmet Ana Grup']],
-
   ['📃', 'AÇILIŞ EVRAKLARI', ['Açılış Evrakları', 'Stok Devir Evrakları']],
-
   ['📊', 'RAPORLAR', ['Masraf Raporu', 'Kasa Raporu', 'Banka Raporu', 'Cari Durum Raporu', 'Cari Durum Bakiye Raporu', 'Hizmet Durum Raporu', 'Miktarsal ve Finansal Stok Durum Raporu', 'Satış Raporu', 'Alış Raporu', 'Nakit Akış Raporu', 'Kar/Zarar Raporu', 'Z Raporları']],
-
   ['⚙️', 'AYARLAR', ['Firma Ayarları', 'Kullanıcı Ayarları']],
 ];
 
@@ -51,7 +40,6 @@ export default function PhoneDemo() {
   const toastTimer = useRef(null);
   const [activeModule, setActiveModule] = useState('dashboard');
 
-
   useEffect(() => {
     if (!powered) return;
     const updateClock = () => setClock(new Intl.DateTimeFormat('tr-TR', { hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()));
@@ -75,6 +63,19 @@ export default function PhoneDemo() {
     return () => clearInterval(id);
   }, [powered]);
 
+  // SCROLL KİLİTLENME MANTIĞI (Sadece 'powered' state'i değiştiğinde çalışır)
+  useEffect(() => {
+    if (powered) {
+      document.body.classList.add('modal-open');
+    } else {
+      document.body.classList.remove('modal-open');
+    }
+
+    return () => {
+      document.body.classList.remove('modal-open');
+    };
+  }, [powered]);
+
   const showToast = (message) => {
     setToast(message);
     clearTimeout(toastTimer.current);
@@ -85,7 +86,6 @@ export default function PhoneDemo() {
     setBattery(100);
     setPowered(true);
   };
-
 
   const results = menuGroups.filter((group) => `${group[1]} ${group[2].join(' ')}`.toLocaleLowerCase('tr').includes(query.toLocaleLowerCase('tr')));
 
@@ -105,9 +105,8 @@ export default function PhoneDemo() {
     showToast(`${moduleName} açılıyor`);
   };
 
-
   return (
-    <div className="phone-demo" >
+    <div className="phone-demo">
       <div className="phone">
         <div className="screen">
 
@@ -297,13 +296,13 @@ export default function PhoneDemo() {
                               className="menu-item"
                               onClick={() =>
                                 setExpanded(
-                                  expanded === "PERAKENDE YÖNETİMİ"
+                                  expanded === " PERAKENDE YÖNETİMİ"
                                     ? null
                                     : "PERAKENDE YÖNETİMİ"
                                 )
                               }
                             >
-                              <i>▤</i>
+                              <i>🛒</i>
                               <span>PERAKENDE YÖNETİMİ</span>
                               <b
                                 className={
@@ -323,6 +322,104 @@ export default function PhoneDemo() {
                                   "Terminal Yönetimi",
                                   "Kategori Yönetimi",
                                   "Ürün Butonları",
+                                ].map((item) => (
+                                  <button
+                                    key={item}
+                                    onClick={() => {
+                                      showToast(`${item} açılıyor`);
+                                      setDrawerOpen(false);
+                                    }}
+                                  >
+                                    {item}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="menu-block">
+                            <button
+                              className="menu-item"
+                              onClick={() =>
+                                setExpanded(
+                                  expanded === "RESTORAN YÖNETİMİ"
+                                    ? null
+                                    : "RESTORAN YÖNETİMİ"
+                                )
+                              }
+                            >
+                              <i>🍽️</i>
+                              <span>RESTORAN YÖNETİMİ</span>
+                              <b
+                                className={
+                                  expanded === "RESTORAN YÖNETİMİ"
+                                    ? "rotated"
+                                    : ""
+                                }
+                              >
+                                ⌄
+                              </b>
+                            </button>
+
+                            {expanded === "RESTORAN YÖNETİMİ" && (
+                              <div className="sub-menu">
+                                {[
+                                  "Adisyon Yönetimi",
+                                  "Mutfak Ekranı",
+                                  "Şube Yönetimi",
+                                  "Masa / Bolge Yonetimi",,
+                                  "Menü Yönetimi",
+                                  "Menü Özellik Tanımlama",
+                                ].map((item) => (
+                                  <button
+                                    key={item}
+                                    onClick={() => {
+                                      showToast(`${item} açılıyor`);
+                                      setDrawerOpen(false);
+                                    }}
+                                  >
+                                    {item}
+                                  </button>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="menu-block">
+                            <button
+                              className="menu-item"
+                              onClick={() =>
+                                setExpanded(
+                                  expanded === "AKARYAKIT YÖNETİMİ"
+                                    ? null
+                                    : "AKARYAKIT YÖNETİMİ"
+                                )
+                              }
+                            >
+                              <i>⛽</i>
+                              <span>AKARYAKIT YÖNETİMİ</span>
+                              <b
+                                className={
+                                  expanded === "AKARYAKIT YÖNETİMİ"
+                                    ? "rotated"
+                                    : ""
+                                }
+                              >
+                                ⌄
+                              </b>
+                            </button>
+
+                            {expanded === "AKARYAKIT YÖNETİMİ" && (
+                              <div className="sub-menu">
+                                {[
+                                  "Parametreler",
+                                  "Ada Kartları",
+                                  "Sayaç Kartları",
+                                  "Vardiya Başlat / Bitir",
+                                  "Sayaç Hareketleri",
+                                  "Hesap Cetveli",
+                                  "Pompacı Hareket",
+                                  "Hesap Cetveli Raporu",
                                 ].map((item) => (
                                   <button
                                     key={item}
@@ -366,7 +463,6 @@ export default function PhoneDemo() {
 
             </div>
           )}
-
 
           <div className={`power-screen ${powered ? 'off' : ''}`}>
             <button className="power-btn" onClick={powerOn} aria-label="Demoyu aç">⏻</button>
