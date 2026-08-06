@@ -19,7 +19,7 @@
   --border-color: rgba(150, 147, 147, 0.08);
   --border-hover: rgba(255, 255, 255, 0.16);
   
-  --gradient-brand: linear-gradient(135deg, #fe9d00 0%, #cb7d00 50%, #000000 100%);
+  --gradient-brand: linear-gradient(135deg, #ff6500 0%, #ffa500 50%, #ffd2a1 100%);
   --gradient-blue: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   --gradient-green: linear-gradient(135deg, #059669 0%, #10b981 100%);
   --gradient-purple: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
@@ -161,9 +161,9 @@ a {
   inset: 0;
   background: linear-gradient(
     135deg,
-    #000000 0%,
-    #cb7d00 50%,
-    #fe9d00 100%
+    rgb(251, 202, 167) 0%,
+    #ffa500 50%,
+    #ff6500 100%
   );
   opacity: 0;
   z-index: -1;
@@ -182,24 +182,24 @@ a {
   box-shadow: 0 0 30px rgba(254,157,0,.5);
   background: linear-gradient(
     135deg,
-    #000000 0%,
-    #cb7d00 50%,
-    #fe9d00 100%
+    rgb(251, 202, 167) 0%,
+    #ffa500 50%,
+    #ff6500 100%
   );
 }
 
 .btn-secondary {
   background: linear-gradient(
     135deg,
-    #fe9d00 0%,
-    #cb7d00 50%,
-    #000000 100%
+    #ff6500 0%,
+    #ffa500 50%,
+    rgb(251, 202, 167) 100%
   );
   color: #ffffff;
   position: relative;
   overflow: hidden;
   box-shadow: var(--shadow-glow);
-  transition: all .3s ease;
+  transition: all 1.3s ease;
   z-index:1;
 }
 
@@ -209,13 +209,17 @@ a {
   inset:0;
   background: linear-gradient(
     135deg,
-    #000000 0%,
-    #cb7d00 50%,
-    #fe9d00 100%
+    rgb(251, 202, 167) 0%,
+    #ffa500 50%,
+    #ff6500 100%
   );
   opacity:0;
-  transition:.5s ease;
+  transition:1.2s ease;
   z-index:-1;
+}
+
+.btn-secondary:hover::after {
+  left:130%;
 }
 
 .btn-secondary:hover::before {
@@ -227,9 +231,9 @@ a {
   box-shadow:0 0 30px rgba(139,92,246,.5);
    background: linear-gradient(
     135deg,
-    #0000 100%,
-    #cb7d00 50%,
-    #fe9d00 0%
+    rgb(251, 202, 167) 100%,
+    #ffa500 50%,
+    #ff6500 0%
   );
 }
 
@@ -260,7 +264,7 @@ a {
   font-weight: 600;
   border: 1px solid rgba(59, 130, 246, 0.2);
   background: rgba(239, 245, 250, 0.767);
-  color: orange;
+  color: #ff6500;
   margin-bottom: 1.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -278,10 +282,10 @@ a {
   font-size: 1.7rem;
   margin-bottom: 0.5rem;
 
-  background: linear-gradient(135deg, #959494 0%, #f5ba76 100%);
+  background: linear-gradient(135deg, #ff6500  0%, #959494 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+}#ff6500 
 
 .features-header p {
   font-size: 0.95rem;
@@ -488,7 +492,7 @@ a {
   color: var(--text-primary);
 }
 .logo-subtext {
-  color:orange;
+  color:#ff6500;
   font-weight: 500;
 }
 .navbar-desktop {
@@ -656,7 +660,7 @@ gap: 20px;
     background:none;
 
     -webkit-background-clip:unset;
-    color:#f5ba76;
+    color:#ff6500;
 
 }
 /* ==========================================================
@@ -858,7 +862,7 @@ PRODUCT CARDS
 
     justify-content:center;
 
-    color:#f5ba76;
+    color:#ff6500;
 
     flex-shrink:0;
 
@@ -895,7 +899,7 @@ MAIN LINKS
 
 .mega-link:hover{
 
-    color:#f5ba76;
+    color:#ff6500;
 
     transform:translateX(6px);
 
@@ -903,7 +907,7 @@ MAIN LINKS
 
 .mega-link svg{
 
-    color:#f5ba76;
+    color:#ff6500;
 
 }
 
@@ -934,7 +938,7 @@ GROUPS
 
 
 .mega-group:hover .mega-group-title {
-    color: #f5ba76;
+    color: #ff6500;
     transform: translateX(4px);
 }
 /* =======================
@@ -966,13 +970,13 @@ GROUP TITLE
 
 .mega-group-title svg{
 
-    color:#f5ba76;
+    color:#ff6500;
 
 }
 
 .mega-group-title:hover{
 
-    color:#f5ba76;
+    color:#ff6500;
 
     transform:translateX(4px);
 
@@ -1010,7 +1014,7 @@ GROUP ITEMS
 
     content:"•";
 
-    color:#f5ba76;
+    color:#ff6500;
 
     margin-right:8px;
 
@@ -1056,7 +1060,7 @@ COMING SOON
 
 .coming-item small{
 
-     background:#f5ba76;
+     background:#ff6500;
 
     color:#fff;
 
@@ -1249,7 +1253,7 @@ COMING SOON
   border-radius: 50%;
 }
 .dot-red { background: #ef4444; }
-.dot-yellow { background: #f59e0b; }
+.dot-yellow { background: #ff6500; }
 .dot-green { background: #10b981; }
 .graphic-title-bar {
   font-family: var(--mono);
@@ -1932,7 +1936,7 @@ COMING SOON
 }
 
 .coming-badge{
-  background:#f7b261;
+  background:#ff6500;
   color:#fff;
   font-size:.72rem;
   font-weight:600;

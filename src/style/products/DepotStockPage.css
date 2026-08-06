@@ -75,7 +75,7 @@
 
     padding:16px 18px;
 
-    background:rgb(220, 161, 88);
+    background:#ffa500;
 
     border:1px solid var(--border-color);
 
@@ -88,7 +88,7 @@
 
     transform:translateY(-4px);
 
-    border-color:#f7941c;
+    border-color:#ffa500;
 }
 
 .hero-buttons{
@@ -111,7 +111,7 @@
 
     background:rgba(247,148,28,.12);
 
-    color:#f7941c;
+    color:#ff6500;
 
     font-weight:600;
 
@@ -171,7 +171,7 @@
 
     outline:none;
 
-    border-color:#f7941c;
+    border-color:#ff6500;
 
     box-shadow:0 0 0 4px rgba(247,148,28,.15);
 }
@@ -192,7 +192,7 @@
     padding:10px 18px;
     border-radius:999px;
     background:rgba(247,148,28,.12);
-    color:#f7941c;
+    color:#ff6500;
     font-weight:600;
     margin-bottom:18px;
 }
@@ -204,7 +204,7 @@
     letter-spacing: -0.03em;
     background: linear-gradient(
         90deg,
-        #ff9d00,
+        #ff6500,
         #ff8800,
         #0b0b0b
     );
@@ -233,7 +233,7 @@
 
     border-radius:22px;
 
-    background:var(--bg-secondary);
+    background: #ffd39b;
 
     border:1px solid var(--border-color);
 
@@ -245,7 +245,7 @@
 
     transform:translateY(-8px);
 
-    border-color:#f7941c;
+    border-color:fff8dc;
 
     box-shadow:0 15px 35px rgba(0,0,0,.08);
 
@@ -255,7 +255,7 @@
 
     
     margin-bottom:18px;
-    color:#f7941c;
+    color:#ff6500;
 
     font-size:1.25rem;
 
@@ -263,14 +263,14 @@
 
 .why-card p{
 
-    color:var(--text-secondary);
+    color:var(--text-primary);
 
     line-height:1.7;
 
 }
 .why-card:hover .why-icon{
 
-    background:#f7941c;
+    background:#ff6500;
 
     color:white;
 
@@ -288,7 +288,7 @@
 
     background:rgba(247,148,28,.12);
 
-    color:#f7941c;
+    color:#ff6500;
 
     margin-bottom:22px;
 
@@ -326,7 +326,12 @@
     font-size: 2rem;
     margin-bottom: 20px;
     font-weight: 700;
-    background: linear-gradient(135deg, #ff8a00, #080808);
+     background: linear-gradient(
+    135deg,
+    #ff6500 0%,
+    #ffa500 50%,
+    rgb(251, 202, 167) 100%
+  );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -366,7 +371,7 @@
 }
 
 .stat-card{
-    background:var(--bg-secondary);
+    background:#ffd39b;
     border:1px solid var(--border-color);
     border-radius:20px;
     padding:40px 20px;
@@ -383,7 +388,7 @@
 
 .stat-card h3{
     font-size:3rem;
-    color:#f4a621;
+    color:#ff6500;
     margin-bottom:10px;
     font-weight:700;
 }
@@ -412,7 +417,7 @@
 }
 
 .faq-item:hover{
-    border-color:#f4a621;
+    border-color:#ff6500;
 }
 
 .faq-item summary{
@@ -508,8 +513,8 @@
     font-size: 2.2rem;
     background: linear-gradient(
         135deg,
+        #ff6500,
         #ffb000,
-        #ff6b00,
         #e91e63
     );
     -webkit-background-clip: text;
