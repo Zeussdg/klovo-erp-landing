@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../assets/logo_yeni_1.png';
+import logo from '../assets/aa.png';
 import { HashLink } from "react-router-hash-link";
 import appStore from "/download-on-the-app-store.svg";
 import googlePlay from "/GetItOnGooglePlay_Badge_Web_color_Turkish.png";
@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="footer-top">
           <div className="footer-brand">
             <HashLink smooth to="/" className="footer-logo">
-              <img src={logo} alt="Klovo ERP Logo" className="logo-img" />
+              <img src={logo} alt="Klovo ERP Logo" className="logo" />
             
             </HashLink>
             <p >Bulut tabanlı yapısı ile finans, stok, satış, operasyon ve e-fatura süreçlerinizi tek platformdan yönetin.</p>

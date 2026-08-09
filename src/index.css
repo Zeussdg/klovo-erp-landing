@@ -1748,9 +1748,14 @@ COMING SOON
   color:var(--text-secondary);
 }
 .footer-logo {
+  height: 40px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+.footer-logo img {
+  height:300px;
+  width:250px;
 }
 .footer-links-grid {
   display: flex;
