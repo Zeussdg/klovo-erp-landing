@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import logo from '../assets/logo_yeni_1.png';
+import React, { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import logo from "../assets/logo_yeni_1.png";
 import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import {
@@ -19,15 +19,16 @@ import {
   Cloud,
   Fuel,
   Code2,
+  Factory,
 } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-const [mobileMainOpen, setMobileMainOpen] = useState(false);
-const [mobileSubOpen, setMobileSubOpen] = useState(false);
-const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
+  const [mobileMainOpen, setMobileMainOpen] = useState(false);
+  const [mobileSubOpen, setMobileSubOpen] = useState(false);
+  const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,8 +38,8 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
         setIsScrolled(false);
       }
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleMobileMenu = () => {
@@ -46,12 +47,11 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
   };
 
   return (
-    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`navbar-header ${isScrolled ? "scrolled" : ""}`}>
       <div className="container navbar-container">
-       <HashLink to="/#home" className="logo-img">
-  <img src={logo} alt="Klovo ERP Logo" />
-</HashLink>
-
+        <HashLink to="/#home" className="logo-img">
+          <img src={logo} alt="Klovo ERP Logo" />
+        </HashLink>
 
         {/* Desktop Menu */}
         <nav className="navbar-desktop">
@@ -62,13 +62,9 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
             Özellikler
           </HashLink>
           <div className="nav-dropdown">
-
-            <button className="nav-link dropdown-trigger">
-              Ürünler
-            </button>
+            <button className="nav-link dropdown-trigger">Ürünler</button>
 
             <div className="mega-menu">
-
               {/* 1. SÜTUN - ÜRÜNLER */}
               <div className="mega-column">
                 <h3 className="mega-title">Ürünler</h3>
@@ -123,7 +119,10 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
                   <span>Masraf Yönetimi</span>
                 </HashLink>
 
-                <HashLink to="/products/personel-yonetimi" className="mega-link">
+                <HashLink
+                  to="/products/personel-yonetimi"
+                  className="mega-link"
+                >
                   <Users size={18} />
                   <span>Personel Yönetimi</span>
                 </HashLink>
@@ -133,7 +132,10 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
                   Satış ve Müşteri Yönetimi
                 </HashLink>
 
-                <HashLink to="/products/satinalma-tedarikci" className="mega-link">
+                <HashLink
+                  to="/products/satinalma-tedarikci"
+                  className="mega-link"
+                >
                   <Truck size={18} />
                   <span>Satın Alma & Tedarikçi</span>
                 </HashLink>
@@ -149,65 +151,89 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
                 <h3 className="mega-title">Alt Modüller</h3>
 
                 <div className="mega-groups-grid">
+                  <div className="mega-group">
+                    <HashLink
+                      to="/products/perakende"
+                      className="mega-group-title"
+                    >
+                      <ShoppingCart size={18} />
+                      <span>Perakende Yönetimi</span>
+                    </HashLink>
 
-
-
-                 <div className="mega-group">
-  <HashLink to="/products/perakende" className="mega-group-title">
-    <ShoppingCart size={18} />
-    <span>Perakende Yönetimi</span>
-  </HashLink>
-
-  <ul className="mega-sublist">
-    <li>Kasa Yönetimi</li>
-    <li>POS Yönetimi</li>
-    <li>Barkod Etiket Yönetimi</li>
-    <li>Sayım İşleri</li>
-    <li>Yazar Kasa Entegrasyonu</li>
-  </ul>
-</div>
+                    <ul className="mega-sublist">
+                      <li>Kasa Yönetimi</li>
+                      <li>POS Yönetimi</li>
+                      <li>Barkod Etiket Yönetimi</li>
+                      <li>Sayım İşleri</li>
+                      <li>Yazar Kasa Entegrasyonu</li>
+                    </ul>
+                  </div>
 
                   <div className="mega-group">
-  <HashLink to="/products/restoran-cafe" className="mega-group-title">
-    <UtensilsCrossed size={18} />
-    <span>Restoran Yönetimi</span>
-  </HashLink>
+                    <HashLink
+                      to="/products/restoran-cafe"
+                      className="mega-group-title"
+                    >
+                      <UtensilsCrossed size={18} />
+                      <span>Restoran Yönetimi</span>
+                    </HashLink>
 
-  <ul className="mega-sublist">
-    <li>Kasa Yönetimi</li>
-    <li>Paket / Gel-Al / Masa Yönetimi</li>
-    <li>Menü Yönetimi</li>
-    <li>QR Menü</li>
-    <li>Yazar Kasa Entegrasyonu</li>
-  </ul>
-</div>
+                    <ul className="mega-sublist">
+                      <li>Kasa Yönetimi</li>
+                      <li>Paket / Gel-Al / Masa Yönetimi</li>
+                      <li>Menü Yönetimi</li>
+                      <li>QR Menü</li>
+                      <li>Yazar Kasa Entegrasyonu</li>
+                    </ul>
+                  </div>
 
                   <div className="mega-group">
-  <HashLink to="/products/akaryakit" className="mega-group-title">
-    <Fuel size={18} />
-    <span>Akaryakıt Yönetimi</span>
-  </HashLink>
+                    <HashLink
+                      to="/products/akaryakit"
+                      className="mega-group-title"
+                    >
+                      <Fuel size={18} />
+                      <span>Akaryakıt Yönetimi</span>
+                    </HashLink>
 
-  <ul className="mega-sublist">
-    <li>Pompacı Hesabı</li>
-    <li>Sayaç Satışları</li>
-    <li>Tank Yönetimi</li>
-    <li>Turpak / ASİS Entegrasyonu</li>
-    <li>Saha Satış Yönetimi</li>
-  </ul>
-</div>
-<div className="mega-group">
-  <HashLink to="/products/e-donusum" className="mega-group-title">
-    <Archive size={18} />
-    <span>E-Dönüşüm</span>
-  </HashLink>
+                    <ul className="mega-sublist">
+                      <li>Pompacı Hesabı</li>
+                      <li>Sayaç Satışları</li>
+                      <li>Tank Yönetimi</li>
+                      <li>Turpak / ASİS Entegrasyonu</li>
+                      <li>Saha Satış Yönetimi</li>
+                    </ul>
+                  </div>
+                  <div className="mega-group">
+                    <HashLink
+                      to="/products/e-donusum"
+                      className="mega-group-title"
+                    >
+                      <Archive size={18} />
+                      <span>E-Dönüşüm</span>
+                    </HashLink>
 
-  <ul className="mega-sublist">
-    <li>E-Fatura</li>
-    <li>E-Arşiv</li>
-  </ul>
-</div>
-              </div>
+                    <ul className="mega-sublist">
+                      <li>E-Fatura</li>
+                      <li>E-Arşiv</li>
+                    </ul>
+                  </div>
+                  <div className="mega-group">
+                    <HashLink
+                      to="/products/Uretim"
+                      className="mega-group-title"
+                    >
+                      <Factory size={18} />
+                      <span>Üretim Yönetimi</span>
+                    </HashLink>
+
+                    <ul className="mega-sublist">
+                      <li>Rota Yönetimi</li>
+                      <li>Reçete Tanımlama</li>
+                      <li>Ürün Ağacı</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
 
               {/* 4. SÜTUN - GELECEK */}
@@ -220,11 +246,6 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
                 </div>
 
                 <div className="coming-item">
-                  <span>Üretim Yönetimi</span>
-                  <small>Yakında</small>
-                </div>
-
-                <div className="coming-item">
                   <span>Perakende Kampanya Yönetimi</span>
                   <small>Yakında</small>
                 </div>
@@ -233,16 +254,23 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
                   <span>E-İrsaliye</span>
                   <small>Yakında</small>
                 </div>
+                <div className="coming-item">
+                  <span>Tamir Teknik Servis Yönetimi</span>
+                  <small>Yakında</small>
+                </div>
 
+                <div className="coming-item">
+                  <span>Genel Muhasebe</span>
+                  <small>Yakında</small>
+                </div>
                 <div className="coming-item">
                   <span>Restoran Portal Entegrasyonları</span>
                   <small>Yakında</small>
                 </div>
               </div>
-
             </div>
-
-          </div> {/* nav-dropdown */}
+          </div>{" "}
+          {/* nav-dropdown */}
           <HashLink to="/#simulator" className="nav-link">
             Mobil ERP Simülatörü
           </HashLink>
@@ -250,8 +278,6 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
             İletişim
           </HashLink>
         </nav>
-
-
 
         {/* <div className="navbar-cta">
         
@@ -264,162 +290,216 @@ const [mobileFutureOpen, setMobileFutureOpen] = useState(false);
           <HashLink to="/demo-talep" className="btn btn-primary btn-navbar">
             Hemen Deneyelim
           </HashLink>
-
         </div>
 
         {/* Mobile Menu Button */}
-        <button className="navbar-mobile-toggle" onClick={toggleMobileMenu} aria-label="Menüyü Aç/Kapat">
+        <button
+          className="navbar-mobile-toggle"
+          onClick={toggleMobileMenu}
+          aria-label="Menüyü Aç/Kapat"
+        >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`navbar-mobile-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+      <div
+        className={`navbar-mobile-overlay ${isMobileMenuOpen ? "open" : ""}`}
+      >
         <nav className="navbar-mobile-nav">
-          <HashLink to="/#about" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+          <HashLink
+            to="/#about"
+            className="mobile-nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Hakkımızda
           </HashLink>
-          <HashLink to="/#features" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+          <HashLink
+            to="/#features"
+            className="mobile-nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Özellikler
           </HashLink>
-         <button
-  className="mobile-nav-link mobile-products-toggle"
-  onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
->
-  Ürünler {mobileProductsOpen ? "▲" : "▼"}
-</button>
+          <button
+            className="mobile-nav-link mobile-products-toggle"
+            onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+          >
+            Ürünler {mobileProductsOpen ? "▲" : "▼"}
+          </button>
 
-{mobileProductsOpen && (
-  <div className="mobile-products-wrapper">
+          {mobileProductsOpen && (
+            <div className="mobile-products-wrapper">
+              {/* Ürünler */}
+              <button
+                className="mobile-sub-toggle"
+                onClick={() => setMobileMainOpen(!mobileMainOpen)}
+              >
+                Ürünler {mobileMainOpen ? "▲" : "▼"}
+              </button>
 
-    {/* Ürünler */}
-    <button
-      className="mobile-sub-toggle"
-      onClick={() => setMobileMainOpen(!mobileMainOpen)}
-    >
-      Ürünler {mobileMainOpen ? "▲" : "▼"}
-    </button>
+              {mobileMainOpen && (
+                <div className="mobile-products-list">
+                  <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                    Klovo One ERP
+                  </HashLink>
 
-    {mobileMainOpen && (
-      <div className="mobile-products-list">
-        <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
-          Klovo One ERP
-        </HashLink>
+                  <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                    Klovo One Mobil
+                  </HashLink>
 
-        <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
-          Klovo One Mobil
-        </HashLink>
+                  <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
+                    Klovo One Mobil Patron
+                  </HashLink>
+                </div>
+              )}
 
-        <HashLink to="/" onClick={() => setIsMobileMenuOpen(false)}>
-          Klovo One Mobil Patron
-        </HashLink>
-      </div>
-    )}
+              {/* Ana Modüller */}
+              <button
+                className="mobile-sub-toggle"
+                onClick={() => setMobileSubOpen(!mobileSubOpen)}
+              >
+                Ana Modüller {mobileSubOpen ? "▲" : "▼"}
+              </button>
 
-    {/* Ana Modüller */}
-    <button
-      className="mobile-sub-toggle"
-      onClick={() => setMobileSubOpen(!mobileSubOpen)}
-    >
-      Ana Modüller {mobileSubOpen ? "▲" : "▼"}
-    </button>
+              {mobileSubOpen && (
+                <div className="mobile-products-list">
+                  <HashLink
+                    to="/products/depo-stok"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Stok Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/hizmet-yonetimi"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Hizmet Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/masraf-yonetimi"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Masraf Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/personel-yonetimi"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Personel Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/satis-musteri-yonetimi"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Satış ve Müşteri Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/satin-alma-tedarikci"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Satın Alma & Tedarikçi
+                  </HashLink>
+                  <HashLink
+                    to="/products/finans-yonetimi"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Finans Yönetimi
+                  </HashLink>
+                </div>
+              )}
 
-    {mobileSubOpen && (
-      <div className="mobile-products-list">
-        <HashLink to="/products/depo-stok" onClick={() => setIsMobileMenuOpen(false)}>
-  Stok Yönetimi
-</HashLink>
-        <HashLink to="/products/hizmet-yonetimi" onClick={() => setIsMobileMenuOpen(false)}>
-  Hizmet Yönetimi
-</HashLink>
-        <HashLink to="/products/masraf-yonetimi" onClick={() => setIsMobileMenuOpen(false)}>
-  Masraf Yönetimi
-</HashLink>
-        <HashLink to="/products/personel-yonetimi" onClick={() => setIsMobileMenuOpen(false)}>
-  Personel Yönetimi
-</HashLink>
-        <HashLink to="/products/satis-musteri-yonetimi" onClick={() => setIsMobileMenuOpen(false)}>
-  Satış ve Müşteri Yönetimi
-</HashLink>
-        <HashLink to="/products/satin-alma-tedarikci" onClick={() => setIsMobileMenuOpen(false)}>
-  Satın Alma & Tedarikçi
-</HashLink>
-       <HashLink to="/products/finans-yonetimi" onClick={() => setIsMobileMenuOpen(false)}>
-  Finans Yönetimi
-</HashLink>  
-      </div>
-    )}
+              {/* Alt Modüller */}
+              <button
+                className="mobile-sub-toggle"
+                onClick={() => setMobileFutureOpen(!mobileFutureOpen)}
+              >
+                Alt Modüller {mobileFutureOpen ? "▲" : "▼"}
+              </button>
 
-    {/* Alt Modüller */}
-    <button
-      className="mobile-sub-toggle"
-      onClick={() => setMobileFutureOpen(!mobileFutureOpen)}
-    >
-      Alt Modüller {mobileFutureOpen ? "▲" : "▼"}
-    </button>
+              {mobileFutureOpen && (
+                <div className="mobile-products-list">
+                  <HashLink
+                    to="/products/perakende"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Perakende Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/restoran-cafe"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Restoran Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/akaryakit"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    Akaryakıt Yönetimi
+                  </HashLink>
+                  <HashLink
+                    to="/products/e-donusum"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    E-Dönüşüm
+                  </HashLink>
+                </div>
+              )}
 
-    {mobileFutureOpen && (
-      <div className="mobile-products-list">
-        <HashLink to="/products/perakende" onClick={() => setIsMobileMenuOpen(false)}>
-  Perakende Yönetimi
-</HashLink>
-        <HashLink to="/products/restoran-cafe" onClick={() => setIsMobileMenuOpen(false)}>
-  Restoran Yönetimi
-</HashLink>
-        <HashLink to="/products/akaryakit" onClick={() => setIsMobileMenuOpen(false)}>
-  Akaryakıt Yönetimi
-</HashLink>
-        <HashLink to="/products/e-donusum" onClick={() => setIsMobileMenuOpen(false)}>
-  E-Dönüşüm
-</HashLink>
-      </div>
-    )}
+              {/* Gelecek Modüller */}
+              <div className="mobile-coming-soon">
+                <h4>Gelecek Modüller</h4>
 
-    {/* Gelecek Modüller */}
-    <div className="mobile-coming-soon">
-      <h4>Gelecek Modüller</h4>
+                <div className="coming-item">
+                  <span>Banka Entegrasyonu</span>
+                  <span className="coming-badge">Yakında</span>
+                </div>
 
-      <div className="coming-item">
-        <span>Banka Entegrasyonu</span>
-        <span className="coming-badge">Yakında</span>
-      </div>
+                <div className="coming-item">
+                  <span>Üretim Yönetimi</span>
+                  <span className="coming-badge">Yakında</span>
+                </div>
 
-      <div className="coming-item">
-        <span>Üretim Yönetimi</span>
-        <span className="coming-badge">Yakında</span>
-      </div>
+                <div className="coming-item">
+                  <span>Perakende Kampanya Yönetimi</span>
+                  <span className="coming-badge">Yakında</span>
+                </div>
 
-      <div className="coming-item">
-        <span>Perakende Kampanya Yönetimi</span>
-        <span className="coming-badge">Yakında</span>
-      </div>
+                <div className="coming-item">
+                  <span>E-İrsaliye</span>
+                  <span className="coming-badge">Yakında</span>
+                </div>
 
-      <div className="coming-item">
-        <span>E-İrsaliye</span>
-        <span className="coming-badge">Yakında</span>
-      </div>
+                <div className="coming-item">
+                  <span>Restoran Portal Entegrasyonları</span>
+                  <span className="coming-badge">Yakında</span>
+                </div>
+              </div>
+            </div>
+          )}
 
-      <div className="coming-item">
-        <span>Restoran Portal Entegrasyonları</span>
-        <span className="coming-badge">Yakında</span>
-      </div>
-    </div>
-
-  </div>
-)}
-          
-          <HashLink to="/#simulator" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+          <HashLink
+            to="/#simulator"
+            className="mobile-nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             ERP Simülatörü
           </HashLink>
-          <HashLink to="/#contact" className="mobile-nav-link" onClick={() => setIsMobileMenuOpen(false)}>
+          <HashLink
+            to="/#contact"
+            className="mobile-nav-link"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             İletişim
           </HashLink>
           {/* <ThemeToggle className="theme-toggle--mobile" /> */}
-          <HashLink to="/#contact" className="btn btn-primary w-full text-center mt-4" onClick={() => setIsMobileMenuOpen(false)}>
+          <HashLink
+            to="/#contact"
+            className="btn btn-primary w-full text-center mt-4"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Demo Talep Et
           </HashLink>
-
-          
         </nav>
       </div>
     </header>

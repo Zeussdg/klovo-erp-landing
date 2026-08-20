@@ -256,39 +256,7 @@ export default function PerakendePage() {
 
 
 
-                                <div className="feature-showcase">
-                                    {/* 3. görsel */}
-                                    <div className="showcase-image">
-                                        <ImagePreview
-                                            src={Main2}
-                                            alt="2"
-                                        />
-                                    </div>
-
-                                    <div className="showcase-content">
-
-                                        <h3>Müşteri ve Kampanya Yönetimi</h3>
-
-                                        <p>
-                                            Sadakat programları oluşturun, müşterilerinizi analiz edin
-                                            ve kampanyalarınızı tek panel üzerinden yönetin.
-                                        </p>
-
-                                        <ul>
-
-                                            <li>✔ Sadakat sistemi</li>
-
-                                            <li>✔ Üyelik yönetimi</li>
-
-                                            <li>✔ Kampanya tanımlama</li>
-
-                                            <li>✔ Satış analizleri</li>
-
-                                        </ul>
-
-                                    </div>
-
-                                </div>
+                              
 
 
 
